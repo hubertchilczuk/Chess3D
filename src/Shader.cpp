@@ -111,8 +111,7 @@ bool Shader::loadFromFiles(const std::string& vertexPath, const std::string& fra
     return loadFromSources(vs, fs);
 }
 
-void Shader::bind()   const { glUseProgram(programId_); }
-void Shader::unbind()       { glUseProgram(0); }
+void Shader::bind() const { glUseProgram(programId_); }
 
 GLint Shader::uniformLocation(const std::string& name) const {
     auto it = uniformCache_.find(name);
@@ -125,9 +124,7 @@ GLint Shader::uniformLocation(const std::string& name) const {
 void Shader::setBool (const std::string& n, bool  v) const { glUniform1i(uniformLocation(n), v ? 1 : 0); }
 void Shader::setInt  (const std::string& n, int   v) const { glUniform1i(uniformLocation(n), v); }
 void Shader::setFloat(const std::string& n, float v) const { glUniform1f(uniformLocation(n), v); }
-void Shader::setVec2 (const std::string& n, const glm::vec2& v) const { glUniform2fv(uniformLocation(n), 1, glm::value_ptr(v)); }
 void Shader::setVec3 (const std::string& n, const glm::vec3& v) const { glUniform3fv(uniformLocation(n), 1, glm::value_ptr(v)); }
-void Shader::setVec4 (const std::string& n, const glm::vec4& v) const { glUniform4fv(uniformLocation(n), 1, glm::value_ptr(v)); }
 void Shader::setMat3 (const std::string& n, const glm::mat3& m) const { glUniformMatrix3fv(uniformLocation(n), 1, GL_FALSE, glm::value_ptr(m)); }
 void Shader::setMat4 (const std::string& n, const glm::mat4& m) const { glUniformMatrix4fv(uniformLocation(n), 1, GL_FALSE, glm::value_ptr(m)); }
 

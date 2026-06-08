@@ -26,7 +26,6 @@ public:
     bool createProceduralMarble(int size, bool whiteMarble);
 
     void bind(GLuint unit = 0) const;
-    static void unbind(GLuint unit = 0);
 
     GLuint id() const { return texId_; }
     int    width()  const { return width_;  }

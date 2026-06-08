@@ -46,28 +46,11 @@ bool Renderer::initialize() {
     tryLoadOrProc(blackMarble_, "marble_black.png", false, false);
 
     // ---- Piece models ----
-    // Three strategies are tried in order:
-    //  1. per-piece file in  resources/models/<piece>.{obj,fbx,gltf,glb,dae,ply,blend}
-    //  2. a single all-pieces file (typically a .blend exported from Blender)
-    //     lying directly in resources/ or resources/models/, from which each
-    //     piece's mesh is extracted by node-name match ("pawn", "knight", ...).
-    //  3. same combined file split into connected components.
+    // Expects a single combined file in resources/ or resources/models/
+    // (no named groups) split into connected components by height.
     const std::string resDir   = CHESS3D_RESOURCES_DIR;
     const std::string modelDir = resDir + "/models";
-    const PieceType kAll[6] = {
-        PieceType::Pawn, PieceType::Knight, PieceType::Bishop,
-        PieceType::Rook, PieceType::Queen,  PieceType::King
-    };
 
-    auto endsWith = [](const std::string& s, const std::string& suf) {
-        if (s.size() < suf.size()) return false;
-        return std::equal(suf.rbegin(), suf.rend(), s.rbegin(),
-            [](char a, char b){ return std::tolower(static_cast<unsigned char>(a)) ==
-                                       std::tolower(static_cast<unsigned char>(b)); });
-    };
-
-    // Look for a single "all-pieces" model file. Either resources/ or
-    // resources/models/ may contain it.
     static constexpr const char* kCombinedExts[] = {
         ".obj", ".fbx", ".gltf", ".glb", ".dae", ".blend"
     };
@@ -85,7 +68,6 @@ bool Renderer::initialize() {
             std::string stem = e.path().stem().string();
             std::string lower = stem;
             for (char& c : lower) c = static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
-            // If the file name itself matches a single piece, it's NOT a combined file.
             if (lower == "pawn"   || lower == "knight" || lower == "bishop" ||
                 lower == "rook"   || lower == "queen"  || lower == "king") continue;
 
@@ -94,63 +76,21 @@ bool Renderer::initialize() {
         }
         if (!combinedPath.empty()) break;
     }
+
     if (!combinedPath.empty()) {
-        std::cout << "[Renderer] combined model source: " << combinedPath << '\n';
-    }
-    (void)endsWith;
-
-    // ---- Phase 1: per-piece files in resources/models/ ----
-    for (PieceType t : kAll) {
-        auto m = std::make_unique<Model>();
-        const std::string base = modelDir + "/" + pieceName(t);
-        for (const char* ext : { ".obj", ".fbx", ".gltf", ".glb", ".dae", ".ply", ".blend" }) {
-            std::string p = base + ext;
-            if (fs::exists(p) && m->loadFromFile(p)) {
-                std::cout << "[Renderer] loaded model: " << p << '\n';
-                pieceModels_[static_cast<int>(t)] = std::move(m);
-                break;
-            }
-        }
-    }
-
-    // ---- Phase 2: combined file by node-name filter ----
-    // This works if the file has named groups/objects (e.g. an OBJ that uses
-    // `o pawn`, `o knight`, etc., or an FBX where each piece is its own node).
-    if (!combinedPath.empty()) {
-        for (PieceType t : kAll) {
-            if (pieceModels_[static_cast<int>(t)]) continue;
-            auto m = std::make_unique<Model>();
-            if (m->loadFromFileFiltered(combinedPath, pieceName(t))) {
-                std::cout << "[Renderer] extracted '" << pieceName(t)
-                          << "' from " << fs::path(combinedPath).filename().string() << '\n';
-                pieceModels_[static_cast<int>(t)] = std::move(m);
-            }
-        }
-    }
-
-    // ---- Phase 3: combined file by connected-component split ----
-    // This handles the case where the file is a single un-tagged mesh
-    // (no `o`/`g` lines in an .obj, no per-piece nodes in an .fbx).
-    bool anyMissing = false;
-    for (PieceType t : kAll) if (!pieceModels_[static_cast<int>(t)]) { anyMissing = true; break; }
-    if (anyMissing && !combinedPath.empty()) {
+        // Heights sorted ascending: pawn < rook < knight < bishop < queen < king
+        static constexpr PieceType heightOrder[6] = {
+            PieceType::Pawn, PieceType::Rook,  PieceType::Knight,
+            PieceType::Bishop, PieceType::Queen, PieceType::King
+        };
         auto comps = Model::loadAndSplitByComponents(combinedPath);
         if (comps.size() >= 6) {
-            // Heights sorted ascending; chess pieces follow this rough order:
-            //   pawn  <  rook  <  knight  <  bishop  <  queen  <  king
-            static constexpr PieceType heightOrder[6] = {
-                PieceType::Pawn, PieceType::Rook,  PieceType::Knight,
-                PieceType::Bishop, PieceType::Queen, PieceType::King
-            };
             std::cout << "[Renderer] split " << comps.size()
                       << " connected components from "
-                      << fs::path(combinedPath).filename().string()
-                      << " (using shortest 6 sorted by height)\n";
-            for (int i = 0; i < 6; ++i) {
-                if (pieceModels_[static_cast<int>(heightOrder[i])]) continue;
+                      << fs::path(combinedPath).filename().string() << '\n';
+            for (int i = 0; i < 6; ++i)
                 pieceModels_[static_cast<int>(heightOrder[i])] = std::move(comps[i]);
-            }
-        } else if (!comps.empty()) {
+        } else {
             std::cerr << "[Renderer] combined file produced only "
                       << comps.size() << " components (need 6) - "
                          "some piece types will be missing.\n";

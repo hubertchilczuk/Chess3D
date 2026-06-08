@@ -209,9 +209,4 @@ void Texture::bind(GLuint unit) const {
     glBindTexture  (GL_TEXTURE_2D, texId_);
 }
 
-void Texture::unbind(GLuint unit) {
-    glActiveTexture(GL_TEXTURE0 + unit);
-    glBindTexture  (GL_TEXTURE_2D, 0);
-}
-
 } // namespace chess3d

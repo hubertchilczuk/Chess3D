@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <algorithm>
-#include <cctype>
 #include <limits>
 #include <unordered_map>
 #include <glm/gtc/matrix_transform.hpp>
@@ -12,131 +11,6 @@
 #include <assimp/postprocess.h>
 
 namespace chess3d {
-
-namespace {
-glm::mat4 toGlm(const aiMatrix4x4& m) {
-    glm::mat4 r;
-    r[0][0] = m.a1; r[1][0] = m.a2; r[2][0] = m.a3; r[3][0] = m.a4;
-    r[0][1] = m.b1; r[1][1] = m.b2; r[2][1] = m.b3; r[3][1] = m.b4;
-    r[0][2] = m.c1; r[1][2] = m.c2; r[2][2] = m.c3; r[3][2] = m.c4;
-    r[0][3] = m.d1; r[1][3] = m.d2; r[2][3] = m.d3; r[3][3] = m.d4;
-    return r;
-}
-}
-
-bool Model::loadFromFile(const std::string& path) {
-    return loadFromFileFiltered(path, "");
-}
-
-bool Model::loadFromFileFiltered(const std::string& path,
-                                 const std::string& nodeNameFilter) {
-    meshes_.clear();
-    boundsInit_ = false;
-
-    Assimp::Importer importer;
-    const aiScene* scene = importer.ReadFile(path,
-        aiProcess_Triangulate |
-        aiProcess_GenSmoothNormals |
-        aiProcess_CalcTangentSpace |
-        aiProcess_JoinIdenticalVertices |
-        aiProcess_ImproveCacheLocality);
-
-    if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) {
-        std::cerr << "[Model] Assimp error for \"" << path << "\": "
-                  << importer.GetErrorString() << '\n';
-        return false;
-    }
-
-    // If no filter is given, accept every mesh. Otherwise, descend into the
-    // tree and only emit meshes once we are inside a subtree whose root
-    // node's name contains the filter (case-insensitive).
-    const bool noFilter = nodeNameFilter.empty();
-    processNode(scene->mRootNode, scene, glm::mat4(1.0f),
-                nodeNameFilter, /*insideFilteredSubtree=*/noFilter);
-    normalize();
-    return !meshes_.empty();
-}
-
-namespace {
-std::string toLower(std::string s) {
-    for (char& c : s) c = static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
-    return s;
-}
-bool nameMatchesFilter(const std::string& nodeName, const std::string& filter) {
-    if (filter.empty()) return true;
-    return toLower(nodeName).find(toLower(filter)) != std::string::npos;
-}
-}
-
-void Model::processNode(const aiNode* node, const aiScene* scene,
-                        const glm::mat4& parent,
-                        const std::string& nodeNameFilter,
-                        bool insideFilteredSubtree) {
-    glm::mat4 transform = parent * toGlm(node->mTransformation);
-
-    const std::string name = node->mName.C_Str();
-    const bool entersFilteredSubtree =
-        insideFilteredSubtree ||
-        (!nodeNameFilter.empty() && nameMatchesFilter(name, nodeNameFilter));
-
-    if (entersFilteredSubtree) {
-        for (unsigned i = 0; i < node->mNumMeshes; ++i) {
-            processMesh(scene->mMeshes[node->mMeshes[i]], transform);
-        }
-    }
-    for (unsigned i = 0; i < node->mNumChildren; ++i) {
-        processNode(node->mChildren[i], scene, transform,
-                    nodeNameFilter, entersFilteredSubtree);
-    }
-}
-
-void Model::processMesh(const aiMesh* mesh, const glm::mat4& transform) {
-    std::vector<Vertex>          verts;
-    std::vector<std::uint32_t>   idx;
-    verts.reserve(mesh->mNumVertices);
-
-    glm::mat3 normalMat = glm::mat3(glm::transpose(glm::inverse(transform)));
-
-    for (unsigned i = 0; i < mesh->mNumVertices; ++i) {
-        Vertex v;
-        glm::vec4 p(mesh->mVertices[i].x, mesh->mVertices[i].y, mesh->mVertices[i].z, 1.0f);
-        glm::vec4 wp = transform * p;
-        v.position = glm::vec3(wp);
-
-        if (mesh->HasNormals()) {
-            glm::vec3 n(mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z);
-            v.normal = glm::normalize(normalMat * n);
-        }
-        if (mesh->HasTextureCoords(0)) {
-            v.uv = { mesh->mTextureCoords[0][i].x, mesh->mTextureCoords[0][i].y };
-        } else {
-            // Cheap planar fallback.
-            v.uv = { v.position.x * 0.5f + 0.5f, v.position.z * 0.5f + 0.5f };
-        }
-
-        if (!boundsInit_) {
-            boundsMin_ = boundsMax_ = v.position;
-            boundsInit_ = true;
-        } else {
-            boundsMin_ = glm::min(boundsMin_, v.position);
-            boundsMax_ = glm::max(boundsMax_, v.position);
-        }
-        verts.push_back(v);
-    }
-
-    for (unsigned f = 0; f < mesh->mNumFaces; ++f) {
-        const aiFace& face = mesh->mFaces[f];
-        if (face.mNumIndices != 3) continue;
-        idx.push_back(face.mIndices[0]);
-        idx.push_back(face.mIndices[1]);
-        idx.push_back(face.mIndices[2]);
-    }
-
-    if (idx.empty()) return;
-    auto m = std::make_unique<Mesh>();
-    m->upload(verts, idx);
-    meshes_.push_back(std::move(m));
-}
 
 void Model::normalize() {
     if (!boundsInit_) {
