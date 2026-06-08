@@ -1,0 +1,24 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.aps
+*.ncb
+*.sdf
+*.opensdf
+*.db
+*.opendb
+ipch/
+x64/
+Debug/
+Release/
+
+# CMake leftovers (kept for reference, not needed for build)
+build/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
