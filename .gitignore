@@ -13,9 +13,6 @@ obj/
 *.db
 *.opendb
 ipch/
-x64/
-Debug/
-Release/
 
 # CMake leftovers (kept for reference, not needed for build)
 build/
