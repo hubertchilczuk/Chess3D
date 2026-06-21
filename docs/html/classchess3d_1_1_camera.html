@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Chess3D: Dokumentacja klasy chess3d::Camera</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Chess3D
+   </div>
+   <div id="projectbrief">Projekt grafiki komputerowej - wizualizacja partii szachowej 3D.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classchess3d_1_1_camera.html','','classchess3d_1_1_camera-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy chess3d::Camera</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Kamera swobodna używana do obserwacji planszy oraz figur.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_camera_8h_source.html">Camera.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a7f2d71f189894f4284a56d267e941bfd" id="r_a7f2d71f189894f4284a56d267e941bfd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7f2d71f189894f4284a56d267e941bfd">Camera</a> (const glm::vec3 &amp;position=glm::vec3(0.0f, 8.0f, 10.0f), float yawDeg=-90.0f, float pitchDeg=-45.0f)</td></tr>
+<tr class="memitem:a9d0a4bd8ccfff51f4e395c904be889e8" id="r_a9d0a4bd8ccfff51f4e395c904be889e8"><td class="memItemLeft">glm::mat4&#160;</td><td class="memItemRight"><a class="el" href="#a9d0a4bd8ccfff51f4e395c904be889e8">view</a> () const</td></tr>
+<tr class="memitem:a134743df9ef83082dbd4aa79ba1422b0" id="r_a134743df9ef83082dbd4aa79ba1422b0"><td class="memItemLeft">glm::mat4&#160;</td><td class="memItemRight"><a class="el" href="#a134743df9ef83082dbd4aa79ba1422b0">projection</a> (float aspect) const</td></tr>
+<tr class="memitem:ab3529976dd9d2e73c06e24e31639e23a" id="r_ab3529976dd9d2e73c06e24e31639e23a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab3529976dd9d2e73c06e24e31639e23a">processKeyboard</a> (const glm::vec3 &amp;dir, float dt)</td></tr>
+<tr class="memitem:a4895d2f5eceb0313489aea8c79e4df5a" id="r_a4895d2f5eceb0313489aea8c79e4df5a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4895d2f5eceb0313489aea8c79e4df5a">processMouse</a> (float dx, float dy, bool constrainPitch=true)</td></tr>
+<tr class="memitem:a576e66e385c17ea1898e039d3ca1a2e6" id="r_a576e66e385c17ea1898e039d3ca1a2e6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a576e66e385c17ea1898e039d3ca1a2e6">processScroll</a> (float yOffset)</td></tr>
+<tr class="memitem:a8ace0bb8d9bdc2c8e062a37f4900faaf" id="r_a8ace0bb8d9bdc2c8e062a37f4900faaf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8ace0bb8d9bdc2c8e062a37f4900faaf">setPosition</a> (const glm::vec3 &amp;p)</td></tr>
+<tr class="memitem:af5e0e63cf8e2d868b6eebf7ae8fae774" id="r_af5e0e63cf8e2d868b6eebf7ae8fae774"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af5e0e63cf8e2d868b6eebf7ae8fae774">lookAt</a> (const glm::vec3 &amp;target)</td></tr>
+<tr class="memitem:af6c717eeb5ca214773d840c3dface171" id="r_af6c717eeb5ca214773d840c3dface171"><td class="memItemLeft">const glm::vec3 &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af6c717eeb5ca214773d840c3dface171">position</a> () const</td></tr>
+<tr class="memitem:a768f4d1b30436f2a0cb7ef3906d47b14" id="r_a768f4d1b30436f2a0cb7ef3906d47b14"><td class="memItemLeft">const glm::vec3 &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a768f4d1b30436f2a0cb7ef3906d47b14">front</a> () const</td></tr>
+<tr class="memitem:ae559f5cb1109f15054e9b9fa2d514b18" id="r_ae559f5cb1109f15054e9b9fa2d514b18"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ae559f5cb1109f15054e9b9fa2d514b18">fov</a> () const</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atrybuty publiczne</h2></td></tr>
+<tr class="memitem:a798f1386b059eb8c6c0ca74aa94b1d8d" id="r_a798f1386b059eb8c6c0ca74aa94b1d8d"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a798f1386b059eb8c6c0ca74aa94b1d8d">moveSpeed</a> = 6.0f</td></tr>
+<tr class="memitem:afb06985dfa133df6a9b4abc6ab4f33e4" id="r_afb06985dfa133df6a9b4abc6ab4f33e4"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#afb06985dfa133df6a9b4abc6ab4f33e4">mouseSensitivity</a> = 0.1f</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Kamera swobodna używana do obserwacji planszy oraz figur. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00013">13</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a7f2d71f189894f4284a56d267e941bfd" name="a7f2d71f189894f4284a56d267e941bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f2d71f189894f4284a56d267e941bfd">&#9670;&#160;</a></span>Camera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">chess3d::Camera::Camera </td>
+          <td>(</td>
+          <td class="paramtype">const glm::vec3 &amp;</td>          <td class="paramname"><span class="paramname"><em>position</em></span><span class="paramdefsep"> = </span><span class="paramdefval">glm::vec3(0.0f,&#160;8.0f,&#160;10.0f)</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>yawDeg</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-90.0f</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>pitchDeg</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-45.0f</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8cpp_source.html#l00013">13</a> pliku <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="ae559f5cb1109f15054e9b9fa2d514b18" name="ae559f5cb1109f15054e9b9fa2d514b18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae559f5cb1109f15054e9b9fa2d514b18">&#9670;&#160;</a></span>fov()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float chess3d::Camera::fov </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00032">32</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+</div>
+</div>
+<a id="a768f4d1b30436f2a0cb7ef3906d47b14" name="a768f4d1b30436f2a0cb7ef3906d47b14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a768f4d1b30436f2a0cb7ef3906d47b14">&#9670;&#160;</a></span>front()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const glm::vec3 &amp; chess3d::Camera::front </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00031">31</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+</div>
+</div>
+<a id="af5e0e63cf8e2d868b6eebf7ae8fae774" name="af5e0e63cf8e2d868b6eebf7ae8fae774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5e0e63cf8e2d868b6eebf7ae8fae774">&#9670;&#160;</a></span>lookAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::Camera::lookAt </td>
+          <td>(</td>
+          <td class="paramtype">const glm::vec3 &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8cpp_source.html#l00061">61</a> pliku <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af6c717eeb5ca214773d840c3dface171" name="af6c717eeb5ca214773d840c3dface171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6c717eeb5ca214773d840c3dface171">&#9670;&#160;</a></span>position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const glm::vec3 &amp; chess3d::Camera::position </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00030">30</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+</div>
+</div>
+<a id="ab3529976dd9d2e73c06e24e31639e23a" name="ab3529976dd9d2e73c06e24e31639e23a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3529976dd9d2e73c06e24e31639e23a">&#9670;&#160;</a></span>processKeyboard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::Camera::processKeyboard </td>
+          <td>(</td>
+          <td class="paramtype">const glm::vec3 &amp;</td>          <td class="paramname"><span class="paramname"><em>dir</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8cpp_source.html#l00040">40</a> pliku <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4895d2f5eceb0313489aea8c79e4df5a" name="a4895d2f5eceb0313489aea8c79e4df5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4895d2f5eceb0313489aea8c79e4df5a">&#9670;&#160;</a></span>processMouse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::Camera::processMouse </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dy</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>constrainPitch</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8cpp_source.html#l00047">47</a> pliku <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a576e66e385c17ea1898e039d3ca1a2e6" name="a576e66e385c17ea1898e039d3ca1a2e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a576e66e385c17ea1898e039d3ca1a2e6">&#9670;&#160;</a></span>processScroll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::Camera::processScroll </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>yOffset</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8cpp_source.html#l00056">56</a> pliku <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a134743df9ef83082dbd4aa79ba1422b0" name="a134743df9ef83082dbd4aa79ba1422b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a134743df9ef83082dbd4aa79ba1422b0">&#9670;&#160;</a></span>projection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::mat4 chess3d::Camera::projection </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>aspect</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8cpp_source.html#l00036">36</a> pliku <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8ace0bb8d9bdc2c8e062a37f4900faaf" name="a8ace0bb8d9bdc2c8e062a37f4900faaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ace0bb8d9bdc2c8e062a37f4900faaf">&#9670;&#160;</a></span>setPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::Camera::setPosition </td>
+          <td>(</td>
+          <td class="paramtype">const glm::vec3 &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00027">27</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+</div>
+</div>
+<a id="a9d0a4bd8ccfff51f4e395c904be889e8" name="a9d0a4bd8ccfff51f4e395c904be889e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d0a4bd8ccfff51f4e395c904be889e8">&#9670;&#160;</a></span>view()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::mat4 chess3d::Camera::view </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8cpp_source.html#l00032">32</a> pliku <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="afb06985dfa133df6a9b4abc6ab4f33e4" name="afb06985dfa133df6a9b4abc6ab4f33e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb06985dfa133df6a9b4abc6ab4f33e4">&#9670;&#160;</a></span>mouseSensitivity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float chess3d::Camera::mouseSensitivity = 0.1f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00035">35</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+</div>
+</div>
+<a id="a798f1386b059eb8c6c0ca74aa94b1d8d" name="a798f1386b059eb8c6c0ca74aa94b1d8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a798f1386b059eb8c6c0ca74aa94b1d8d">&#9670;&#160;</a></span>moveSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float chess3d::Camera::moveSpeed = 6.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00034">34</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="_camera_8h_source.html">Camera.h</a></li>
+<li><a class="el" href="_camera_8cpp_source.html">Camera.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacechess3d.html">chess3d</a></li><li class="navelem"><a href="classchess3d_1_1_camera.html">Camera</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

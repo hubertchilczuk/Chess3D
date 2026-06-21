@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Chess3D: Plik źródłowy Shader.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Chess3D
+   </div>
+   <div id="projectbrief">Projekt grafiki komputerowej - wizualizacja partii szachowej 3D.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_shader_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Shader.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_shader_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_shader_8h.html">Shader.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;glm/gtc/type_ptr.hpp&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacechess3d.html">chess3d</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classchess3d_1_1_shader.html#a86da5f463b3a58c7b62999e9a63fd672">   15</a></span><a class="code hl_function" href="classchess3d_1_1_shader.html#a86da5f463b3a58c7b62999e9a63fd672">Shader::~Shader</a>() {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">if</span> (programId_ != 0) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        glDeleteProgram(programId_);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        programId_ = 0;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classchess3d_1_1_shader.html#a3336f14a7854c39c2b6d80669211d6d8">   22</a></span><a class="code hl_function" href="classchess3d_1_1_shader.html#a8d3801644d3cefb171fe979e20a0646c">Shader::Shader</a>(<a class="code hl_function" href="classchess3d_1_1_shader.html#a8d3801644d3cefb171fe979e20a0646c">Shader</a>&amp;&amp; other) noexcept</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    : programId_(other.programId_),</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      uniformCache_(std::move(other.uniformCache_)) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    other.programId_ = 0;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classchess3d_1_1_shader.html#a3614f47a8eab502313acf65b056132c5">   28</a></span><a class="code hl_function" href="classchess3d_1_1_shader.html#a8d3801644d3cefb171fe979e20a0646c">Shader</a>&amp; <a class="code hl_function" href="classchess3d_1_1_shader.html#a7762107260da166d73606bc484a34fa6">Shader::operator=</a>(<a class="code hl_function" href="classchess3d_1_1_shader.html#a8d3801644d3cefb171fe979e20a0646c">Shader</a>&amp;&amp; other) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">if</span> (programId_) glDeleteProgram(programId_);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        programId_     = other.programId_;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        uniformCache_  = std::move(other.uniformCache_);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        other.programId_ = 0;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespacechess3d.html#a66cf12699545ff13f82ef36b46305cf8">   38</a></span><span class="keyword">static</span> std::string <a class="code hl_function" href="namespacechess3d.html#a66cf12699545ff13f82ef36b46305cf8">slurp</a>(<span class="keyword">const</span> std::string&amp; path) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    std::ifstream f(path, std::ios::binary);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span> (!f.is_open()) <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    std::ostringstream ss;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    ss &lt;&lt; f.rdbuf();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">return</span> ss.str();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>GLuint Shader::compileStage(GLenum stage, <span class="keyword">const</span> std::string&amp; source, <span class="keyword">const</span> std::string&amp; tag) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    GLuint sh = glCreateShader(stage);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* src = source.c_str();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    glShaderSource(sh, 1, &amp;src, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    glCompileShader(sh);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    GLint ok = 0;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    glGetShaderiv(sh, GL_COMPILE_STATUS, &amp;ok);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">if</span> (!ok) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        GLint len = 0;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        glGetShaderiv(sh, GL_INFO_LOG_LENGTH, &amp;len);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        std::string log(<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(std::max(len, 1)), <span class="charliteral">&#39;\0&#39;</span>);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        glGetShaderInfoLog(sh, len, <span class="keyword">nullptr</span>, log.data());</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;[Shader] &quot;</span> &lt;&lt; tag &lt;&lt; <span class="stringliteral">&quot; compile error:\n&quot;</span> &lt;&lt; log &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        glDeleteShader(sh);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> sh;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keywordtype">bool</span> Shader::loadFromSources(<span class="keyword">const</span> std::string&amp; vsSrc, <span class="keyword">const</span> std::string&amp; fsSrc) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    GLuint vs = compileStage(GL_VERTEX_SHADER,   vsSrc, <span class="stringliteral">&quot;vertex&quot;</span>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    GLuint fs = compileStage(GL_FRAGMENT_SHADER, fsSrc, <span class="stringliteral">&quot;fragment&quot;</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">if</span> (!vs || !fs) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">if</span> (vs) glDeleteShader(vs);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">if</span> (fs) glDeleteShader(fs);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    GLuint prog = glCreateProgram();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    glAttachShader(prog, vs);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    glAttachShader(prog, fs);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    glLinkProgram (prog);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    GLint ok = 0;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    glGetProgramiv(prog, GL_LINK_STATUS, &amp;ok);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">if</span> (!ok) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        GLint len = 0;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        glGetProgramiv(prog, GL_INFO_LOG_LENGTH, &amp;len);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        std::string log(<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(std::max(len, 1)), <span class="charliteral">&#39;\0&#39;</span>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        glGetProgramInfoLog(prog, len, <span class="keyword">nullptr</span>, log.data());</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;[Shader] link error:\n&quot;</span> &lt;&lt; log &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        glDeleteShader(vs);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        glDeleteShader(fs);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        glDeleteProgram(prog);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    glDetachShader(prog, vs);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    glDetachShader(prog, fs);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    glDeleteShader(vs);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    glDeleteShader(fs);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">if</span> (programId_) glDeleteProgram(programId_);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    programId_ = prog;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    uniformCache_.clear();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classchess3d_1_1_shader.html#a32c19f4381e8395f099951eb50fa795e">  105</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classchess3d_1_1_shader.html#a32c19f4381e8395f099951eb50fa795e">Shader::loadFromFiles</a>(<span class="keyword">const</span> std::string&amp; vertexPath, <span class="keyword">const</span> std::string&amp; fragmentPath) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    std::string vs = <a class="code hl_function" href="namespacechess3d.html#a66cf12699545ff13f82ef36b46305cf8">slurp</a>(vertexPath);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    std::string fs = <a class="code hl_function" href="namespacechess3d.html#a66cf12699545ff13f82ef36b46305cf8">slurp</a>(fragmentPath);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">if</span> (vs.empty()) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;[Shader] cannot read vertex shader: &quot;</span> &lt;&lt; vertexPath &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">if</span> (fs.empty()) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;[Shader] cannot read fragment shader: &quot;</span> &lt;&lt; fragmentPath &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">return</span> loadFromSources(vs, fs);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classchess3d_1_1_shader.html#a2bb3c9fd11f6107e44fa3aae03de3af7">  119</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_shader.html#a2bb3c9fd11f6107e44fa3aae03de3af7">Shader::bind</a>()<span class="keyword"> const </span>{ glUseProgram(programId_); }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>GLint Shader::uniformLocation(<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keyword">auto</span> it = uniformCache_.find(name);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">if</span> (it != uniformCache_.end()) <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    GLint loc = glGetUniformLocation(programId_, name.c_str());</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    uniformCache_.emplace(name, loc);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">return</span> loc;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>}</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classchess3d_1_1_shader.html#a04a91bc5fec908695beb10c3dd0c2058">  129</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_shader.html#a04a91bc5fec908695beb10c3dd0c2058">Shader::setBool</a> (<span class="keyword">const</span> std::string&amp; n, <span class="keywordtype">bool</span>  v)<span class="keyword"> const </span>{ glUniform1i(uniformLocation(n), v ? 1 : 0); }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classchess3d_1_1_shader.html#ac36fc265bdd78dfeb2154bc73bfa2202">  130</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_shader.html#ac36fc265bdd78dfeb2154bc73bfa2202">Shader::setInt</a>  (<span class="keyword">const</span> std::string&amp; n, <span class="keywordtype">int</span>   v)<span class="keyword"> const </span>{ glUniform1i(uniformLocation(n), v); }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="classchess3d_1_1_shader.html#ab8bd2495bf788ab5a2af738b9b1a607f">  131</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_shader.html#ab8bd2495bf788ab5a2af738b9b1a607f">Shader::setFloat</a>(<span class="keyword">const</span> std::string&amp; n, <span class="keywordtype">float</span> v)<span class="keyword"> const </span>{ glUniform1f(uniformLocation(n), v); }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classchess3d_1_1_shader.html#a360baf2f24547e296bf256cc855f85bf">  132</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_shader.html#a360baf2f24547e296bf256cc855f85bf">Shader::setVec3</a> (<span class="keyword">const</span> std::string&amp; n, <span class="keyword">const</span> glm::vec3&amp; v)<span class="keyword"> const </span>{ glUniform3fv(uniformLocation(n), 1, glm::value_ptr(v)); }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="classchess3d_1_1_shader.html#a499656797b4c8a44f6317a998d82bf4d">  133</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_shader.html#a499656797b4c8a44f6317a998d82bf4d">Shader::setMat3</a> (<span class="keyword">const</span> std::string&amp; n, <span class="keyword">const</span> glm::mat3&amp; m)<span class="keyword"> const </span>{ glUniformMatrix3fv(uniformLocation(n), 1, GL_FALSE, glm::value_ptr(m)); }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classchess3d_1_1_shader.html#ab9bad788c21698bb2bbae256165b5ccb">  134</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_shader.html#ab9bad788c21698bb2bbae256165b5ccb">Shader::setMat4</a> (<span class="keyword">const</span> std::string&amp; n, <span class="keyword">const</span> glm::mat4&amp; m)<span class="keyword"> const </span>{ glUniformMatrix4fv(uniformLocation(n), 1, GL_FALSE, glm::value_ptr(m)); }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>} <span class="comment">// namespace chess3d</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="ttc" id="a_shader_8h_html"><div class="ttname"><a href="_shader_8h.html">Shader.h</a></div><div class="ttdoc">Plik zrodlowy projektu Chess3D.</div></div>
+<div class="ttc" id="aclasschess3d_1_1_shader_html_a04a91bc5fec908695beb10c3dd0c2058"><div class="ttname"><a href="classchess3d_1_1_shader.html#a04a91bc5fec908695beb10c3dd0c2058">chess3d::Shader::setBool</a></div><div class="ttdeci">void setBool(const std::string &amp;name, bool value) const</div><div class="ttdef"><b>Definicja</b> <a href="#l00129">Shader.cpp:129</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_shader_html_a2bb3c9fd11f6107e44fa3aae03de3af7"><div class="ttname"><a href="classchess3d_1_1_shader.html#a2bb3c9fd11f6107e44fa3aae03de3af7">chess3d::Shader::bind</a></div><div class="ttdeci">void bind() const</div><div class="ttdef"><b>Definicja</b> <a href="#l00119">Shader.cpp:119</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_shader_html_a32c19f4381e8395f099951eb50fa795e"><div class="ttname"><a href="classchess3d_1_1_shader.html#a32c19f4381e8395f099951eb50fa795e">chess3d::Shader::loadFromFiles</a></div><div class="ttdeci">bool loadFromFiles(const std::string &amp;vertexPath, const std::string &amp;fragmentPath)</div><div class="ttdef"><b>Definicja</b> <a href="#l00105">Shader.cpp:105</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_shader_html_a360baf2f24547e296bf256cc855f85bf"><div class="ttname"><a href="classchess3d_1_1_shader.html#a360baf2f24547e296bf256cc855f85bf">chess3d::Shader::setVec3</a></div><div class="ttdeci">void setVec3(const std::string &amp;name, const glm::vec3 &amp;v) const</div><div class="ttdef"><b>Definicja</b> <a href="#l00132">Shader.cpp:132</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_shader_html_a499656797b4c8a44f6317a998d82bf4d"><div class="ttname"><a href="classchess3d_1_1_shader.html#a499656797b4c8a44f6317a998d82bf4d">chess3d::Shader::setMat3</a></div><div class="ttdeci">void setMat3(const std::string &amp;name, const glm::mat3 &amp;m) const</div><div class="ttdef"><b>Definicja</b> <a href="#l00133">Shader.cpp:133</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_shader_html_a7762107260da166d73606bc484a34fa6"><div class="ttname"><a href="classchess3d_1_1_shader.html#a7762107260da166d73606bc484a34fa6">chess3d::Shader::operator=</a></div><div class="ttdeci">Shader &amp; operator=(const Shader &amp;)=delete</div></div>
+<div class="ttc" id="aclasschess3d_1_1_shader_html_a86da5f463b3a58c7b62999e9a63fd672"><div class="ttname"><a href="classchess3d_1_1_shader.html#a86da5f463b3a58c7b62999e9a63fd672">chess3d::Shader::~Shader</a></div><div class="ttdeci">~Shader()</div><div class="ttdef"><b>Definicja</b> <a href="#l00015">Shader.cpp:15</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_shader_html_a8d3801644d3cefb171fe979e20a0646c"><div class="ttname"><a href="classchess3d_1_1_shader.html#a8d3801644d3cefb171fe979e20a0646c">chess3d::Shader::Shader</a></div><div class="ttdeci">Shader()=default</div></div>
+<div class="ttc" id="aclasschess3d_1_1_shader_html_ab8bd2495bf788ab5a2af738b9b1a607f"><div class="ttname"><a href="classchess3d_1_1_shader.html#ab8bd2495bf788ab5a2af738b9b1a607f">chess3d::Shader::setFloat</a></div><div class="ttdeci">void setFloat(const std::string &amp;name, float value) const</div><div class="ttdef"><b>Definicja</b> <a href="#l00131">Shader.cpp:131</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_shader_html_ab9bad788c21698bb2bbae256165b5ccb"><div class="ttname"><a href="classchess3d_1_1_shader.html#ab9bad788c21698bb2bbae256165b5ccb">chess3d::Shader::setMat4</a></div><div class="ttdeci">void setMat4(const std::string &amp;name, const glm::mat4 &amp;m) const</div><div class="ttdef"><b>Definicja</b> <a href="#l00134">Shader.cpp:134</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_shader_html_ac36fc265bdd78dfeb2154bc73bfa2202"><div class="ttname"><a href="classchess3d_1_1_shader.html#ac36fc265bdd78dfeb2154bc73bfa2202">chess3d::Shader::setInt</a></div><div class="ttdeci">void setInt(const std::string &amp;name, int value) const</div><div class="ttdef"><b>Definicja</b> <a href="#l00130">Shader.cpp:130</a></div></div>
+<div class="ttc" id="anamespacechess3d_html"><div class="ttname"><a href="namespacechess3d.html">chess3d</a></div><div class="ttdef"><b>Definicja</b> <a href="_animator_8cpp_source.html#l00010">Animator.cpp:10</a></div></div>
+<div class="ttc" id="anamespacechess3d_html_a66cf12699545ff13f82ef36b46305cf8"><div class="ttname"><a href="namespacechess3d.html#a66cf12699545ff13f82ef36b46305cf8">chess3d::slurp</a></div><div class="ttdeci">static std::string slurp(const std::string &amp;path)</div><div class="ttdef"><b>Definicja</b> <a href="#l00038">Shader.cpp:38</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="_shader_8cpp.html">Shader.cpp</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

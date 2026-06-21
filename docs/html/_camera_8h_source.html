@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Chess3D: Plik źródłowy Camera.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Chess3D
+   </div>
+   <div id="projectbrief">Projekt grafiki komputerowej - wizualizacja partii szachowej 3D.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_camera_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Camera.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_camera_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;glm/glm.hpp&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacechess3d.html">chess3d</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classchess3d_1_1_camera.html">   13</a></span><span class="keyword">class </span><a class="code hl_function" href="classchess3d_1_1_camera.html#a7f2d71f189894f4284a56d267e941bfd">Camera</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_function" href="classchess3d_1_1_camera.html#a7f2d71f189894f4284a56d267e941bfd">Camera</a>(<span class="keyword">const</span> glm::vec3&amp; <a class="code hl_function" href="classchess3d_1_1_camera.html#af6c717eeb5ca214773d840c3dface171">position</a> = glm::vec3(0.0f, 8.0f, 10.0f),</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>           <span class="keywordtype">float</span> yawDeg   = -90.0f,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>           <span class="keywordtype">float</span> pitchDeg = -45.0f);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    glm::mat4 <a class="code hl_function" href="classchess3d_1_1_camera.html#a9d0a4bd8ccfff51f4e395c904be889e8">view</a>()       <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    glm::mat4 <a class="code hl_function" href="classchess3d_1_1_camera.html#a134743df9ef83082dbd4aa79ba1422b0">projection</a>(<span class="keywordtype">float</span> aspect) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// WASD / QE input. dir components: +x right, +z forward (camera local).</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_camera.html#ab3529976dd9d2e73c06e24e31639e23a">processKeyboard</a>(<span class="keyword">const</span> glm::vec3&amp; dir, <span class="keywordtype">float</span> dt);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_camera.html#a4895d2f5eceb0313489aea8c79e4df5a">processMouse</a>(<span class="keywordtype">float</span> dx, <span class="keywordtype">float</span> dy, <span class="keywordtype">bool</span> constrainPitch = <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_camera.html#a576e66e385c17ea1898e039d3ca1a2e6">processScroll</a>(<span class="keywordtype">float</span> yOffset);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classchess3d_1_1_camera.html#a8ace0bb8d9bdc2c8e062a37f4900faaf">   27</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_camera.html#a8ace0bb8d9bdc2c8e062a37f4900faaf">setPosition</a>(<span class="keyword">const</span> glm::vec3&amp; p) { position_ = p; }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_camera.html#af5e0e63cf8e2d868b6eebf7ae8fae774">lookAt</a>(<span class="keyword">const</span> glm::vec3&amp; target);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classchess3d_1_1_camera.html#af6c717eeb5ca214773d840c3dface171">   30</a></span>    <span class="keyword">const</span> glm::vec3&amp; <a class="code hl_function" href="classchess3d_1_1_camera.html#af6c717eeb5ca214773d840c3dface171">position</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> position_; }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classchess3d_1_1_camera.html#a768f4d1b30436f2a0cb7ef3906d47b14">   31</a></span>    <span class="keyword">const</span> glm::vec3&amp; <a class="code hl_function" href="classchess3d_1_1_camera.html#a768f4d1b30436f2a0cb7ef3906d47b14">front</a>()<span class="keyword">    const </span>{ <span class="keywordflow">return</span> front_; }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classchess3d_1_1_camera.html#ae559f5cb1109f15054e9b9fa2d514b18">   32</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="classchess3d_1_1_camera.html#ae559f5cb1109f15054e9b9fa2d514b18">fov</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fov_; }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classchess3d_1_1_camera.html#a798f1386b059eb8c6c0ca74aa94b1d8d">   34</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="classchess3d_1_1_camera.html#a798f1386b059eb8c6c0ca74aa94b1d8d">moveSpeed</a>       = 6.0f;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classchess3d_1_1_camera.html#afb06985dfa133df6a9b4abc6ab4f33e4">   35</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="classchess3d_1_1_camera.html#afb06985dfa133df6a9b4abc6ab4f33e4">mouseSensitivity</a> = 0.1f;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> recomputeBasis();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    glm::vec3 position_;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    glm::vec3 front_   {0.0f, 0.0f, -1.0f};</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    glm::vec3 up_      {0.0f, 1.0f,  0.0f};</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    glm::vec3 right_   {1.0f, 0.0f,  0.0f};</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    glm::vec3 worldUp_ {0.0f, 1.0f,  0.0f};</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">float</span> yaw_;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">float</span> pitch_;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">float</span> fov_   = 55.0f;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">float</span> zNear_ = 0.1f;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">float</span> zFar_  = 100.0f;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>} <span class="comment">// namespace chess3d</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="ttc" id="aclasschess3d_1_1_camera_html_a134743df9ef83082dbd4aa79ba1422b0"><div class="ttname"><a href="classchess3d_1_1_camera.html#a134743df9ef83082dbd4aa79ba1422b0">chess3d::Camera::projection</a></div><div class="ttdeci">glm::mat4 projection(float aspect) const</div><div class="ttdef"><b>Definicja</b> <a href="_camera_8cpp_source.html#l00036">Camera.cpp:36</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_camera_html_a4895d2f5eceb0313489aea8c79e4df5a"><div class="ttname"><a href="classchess3d_1_1_camera.html#a4895d2f5eceb0313489aea8c79e4df5a">chess3d::Camera::processMouse</a></div><div class="ttdeci">void processMouse(float dx, float dy, bool constrainPitch=true)</div><div class="ttdef"><b>Definicja</b> <a href="_camera_8cpp_source.html#l00047">Camera.cpp:47</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_camera_html_a576e66e385c17ea1898e039d3ca1a2e6"><div class="ttname"><a href="classchess3d_1_1_camera.html#a576e66e385c17ea1898e039d3ca1a2e6">chess3d::Camera::processScroll</a></div><div class="ttdeci">void processScroll(float yOffset)</div><div class="ttdef"><b>Definicja</b> <a href="_camera_8cpp_source.html#l00056">Camera.cpp:56</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_camera_html_a768f4d1b30436f2a0cb7ef3906d47b14"><div class="ttname"><a href="classchess3d_1_1_camera.html#a768f4d1b30436f2a0cb7ef3906d47b14">chess3d::Camera::front</a></div><div class="ttdeci">const glm::vec3 &amp; front() const</div><div class="ttdef"><b>Definicja</b> <a href="#l00031">Camera.h:31</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_camera_html_a798f1386b059eb8c6c0ca74aa94b1d8d"><div class="ttname"><a href="classchess3d_1_1_camera.html#a798f1386b059eb8c6c0ca74aa94b1d8d">chess3d::Camera::moveSpeed</a></div><div class="ttdeci">float moveSpeed</div><div class="ttdef"><b>Definicja</b> <a href="#l00034">Camera.h:34</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_camera_html_a7f2d71f189894f4284a56d267e941bfd"><div class="ttname"><a href="classchess3d_1_1_camera.html#a7f2d71f189894f4284a56d267e941bfd">chess3d::Camera::Camera</a></div><div class="ttdeci">Camera(const glm::vec3 &amp;position=glm::vec3(0.0f, 8.0f, 10.0f), float yawDeg=-90.0f, float pitchDeg=-45.0f)</div><div class="ttdef"><b>Definicja</b> <a href="_camera_8cpp_source.html#l00013">Camera.cpp:13</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_camera_html_a8ace0bb8d9bdc2c8e062a37f4900faaf"><div class="ttname"><a href="classchess3d_1_1_camera.html#a8ace0bb8d9bdc2c8e062a37f4900faaf">chess3d::Camera::setPosition</a></div><div class="ttdeci">void setPosition(const glm::vec3 &amp;p)</div><div class="ttdef"><b>Definicja</b> <a href="#l00027">Camera.h:27</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_camera_html_a9d0a4bd8ccfff51f4e395c904be889e8"><div class="ttname"><a href="classchess3d_1_1_camera.html#a9d0a4bd8ccfff51f4e395c904be889e8">chess3d::Camera::view</a></div><div class="ttdeci">glm::mat4 view() const</div><div class="ttdef"><b>Definicja</b> <a href="_camera_8cpp_source.html#l00032">Camera.cpp:32</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_camera_html_ab3529976dd9d2e73c06e24e31639e23a"><div class="ttname"><a href="classchess3d_1_1_camera.html#ab3529976dd9d2e73c06e24e31639e23a">chess3d::Camera::processKeyboard</a></div><div class="ttdeci">void processKeyboard(const glm::vec3 &amp;dir, float dt)</div><div class="ttdef"><b>Definicja</b> <a href="_camera_8cpp_source.html#l00040">Camera.cpp:40</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_camera_html_ae559f5cb1109f15054e9b9fa2d514b18"><div class="ttname"><a href="classchess3d_1_1_camera.html#ae559f5cb1109f15054e9b9fa2d514b18">chess3d::Camera::fov</a></div><div class="ttdeci">float fov() const</div><div class="ttdef"><b>Definicja</b> <a href="#l00032">Camera.h:32</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_camera_html_af5e0e63cf8e2d868b6eebf7ae8fae774"><div class="ttname"><a href="classchess3d_1_1_camera.html#af5e0e63cf8e2d868b6eebf7ae8fae774">chess3d::Camera::lookAt</a></div><div class="ttdeci">void lookAt(const glm::vec3 &amp;target)</div><div class="ttdef"><b>Definicja</b> <a href="_camera_8cpp_source.html#l00061">Camera.cpp:61</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_camera_html_af6c717eeb5ca214773d840c3dface171"><div class="ttname"><a href="classchess3d_1_1_camera.html#af6c717eeb5ca214773d840c3dface171">chess3d::Camera::position</a></div><div class="ttdeci">const glm::vec3 &amp; position() const</div><div class="ttdef"><b>Definicja</b> <a href="#l00030">Camera.h:30</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_camera_html_afb06985dfa133df6a9b4abc6ab4f33e4"><div class="ttname"><a href="classchess3d_1_1_camera.html#afb06985dfa133df6a9b4abc6ab4f33e4">chess3d::Camera::mouseSensitivity</a></div><div class="ttdeci">float mouseSensitivity</div><div class="ttdef"><b>Definicja</b> <a href="#l00035">Camera.h:35</a></div></div>
+<div class="ttc" id="anamespacechess3d_html"><div class="ttname"><a href="namespacechess3d.html">chess3d</a></div><div class="ttdef"><b>Definicja</b> <a href="_animator_8cpp_source.html#l00010">Animator.cpp:10</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="_camera_8h.html">Camera.h</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

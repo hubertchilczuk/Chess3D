@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Chess3D: Plik źródłowy ChessGame.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Chess3D
+   </div>
+   <div id="projectbrief">Projekt grafiki komputerowej - wizualizacja partii szachowej 3D.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_chess_game_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ChessGame.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_chess_game_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_common_8h.html">Common.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_chess_piece_8h.html">ChessPiece.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacechess3d.html">chess3d</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classchess3d_1_1_chess_game.html">   18</a></span><span class="keyword">class </span><a class="code hl_function" href="classchess3d_1_1_chess_game.html#a23b208e78bc31311bb88b2d86e4148bc">ChessGame</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_function" href="classchess3d_1_1_chess_game.html#a23b208e78bc31311bb88b2d86e4148bc">ChessGame</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_chess_game.html#afdc95080146e417189a134842453c0b8">resetToStartingPosition</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classchess3d_1_1_chess_game.html#af3a0911beb87914fac8d329489cf0cd8">loadPGNFile</a>(<span class="keyword">const</span> std::string&amp; path);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// Playback ---------------------------------------------------------</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classchess3d_1_1_chess_game.html#a7eef1e8ad62480069ba978fdce3955cb">   26</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_chess_game.html#a7eef1e8ad62480069ba978fdce3955cb">play</a>()      { playing_ = <span class="keyword">true</span>;  }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classchess3d_1_1_chess_game.html#a71fec711e4e73ddcbedf9e297f6d9af2">   27</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_chess_game.html#a71fec711e4e73ddcbedf9e297f6d9af2">pause</a>()     { playing_ = <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classchess3d_1_1_chess_game.html#a813237e092b1c8e157b5b47210d478ae">   28</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_chess_game.html#a813237e092b1c8e157b5b47210d478ae">togglePlay</a>(){ playing_ = !playing_; }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classchess3d_1_1_chess_game.html#a07a3e84157d4f8c0d12d34cf4e85d096">   29</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classchess3d_1_1_chess_game.html#a07a3e84157d4f8c0d12d34cf4e85d096">isPlaying</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> playing_; }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classchess3d_1_1_chess_game.html#afb274c7bd959b611bd6599a0eab8ac32">stepForward</a>();   <span class="comment">// advance currentMoveIndex_, animate</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classchess3d_1_1_chess_game.html#a72db2289c5b73b1ae2a015284205f3ba">stepBackward</a>();  <span class="comment">// rebuild state from move list up to index - 1</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classchess3d_1_1_chess_game.html#aa8f64ab640254441c4a66918eac48fd3">update</a>(<span class="keywordtype">float</span> dt);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">// Speed: moves per second.</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classchess3d_1_1_chess_game.html#a32203398e5b70cdf8d732f3f325fc8a4">   37</a></span>    <span class="keywordtype">void</span>  <a class="code hl_function" href="classchess3d_1_1_chess_game.html#a32203398e5b70cdf8d732f3f325fc8a4">setSpeed</a>(<span class="keywordtype">float</span> movesPerSecond) { speed_ = std::max(0.05f, movesPerSecond); }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classchess3d_1_1_chess_game.html#aa10f6aa594e65e8428b4b6905a4710f5">   38</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="classchess3d_1_1_chess_game.html#aa10f6aa594e65e8428b4b6905a4710f5">speed</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> speed_; }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">// Inspection -------------------------------------------------------</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classchess3d_1_1_chess_game.html#a950f35b75d685c9be7e00ca8e187fd48">   41</a></span>    <span class="keyword">const</span> std::vector&lt;Move&gt;&amp;                          <a class="code hl_function" href="classchess3d_1_1_chess_game.html#a950f35b75d685c9be7e00ca8e187fd48">moves</a>()<span class="keyword">   const </span>{ <span class="keywordflow">return</span> moves_; }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classchess3d_1_1_chess_game.html#a93ba9d0c9ecfb6afe68e3df6a07032bc">   42</a></span>    <span class="keyword">const</span> std::vector&lt;std::unique_ptr&lt;ChessPiece&gt;&gt;&amp;   <a class="code hl_function" href="classchess3d_1_1_chess_game.html#a93ba9d0c9ecfb6afe68e3df6a07032bc">pieces</a>()<span class="keyword">  const </span>{ <span class="keywordflow">return</span> pieces_; }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classchess3d_1_1_chess_game.html#a0745d20707bc44309cbf1d5731229d61">   43</a></span>    <span class="keywordtype">int</span>                                               <a class="code hl_function" href="classchess3d_1_1_chess_game.html#a0745d20707bc44309cbf1d5731229d61">currentMoveIndex</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currentMoveIndex_; }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classchess3d_1_1_chess_game.html#a76e155a2129b37e26eeb307dc4eda250">   44</a></span>    <span class="keywordtype">int</span>                                               <a class="code hl_function" href="classchess3d_1_1_chess_game.html#a76e155a2129b37e26eeb307dc4eda250">totalMoves</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(moves_.size()); }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">const</span> std::string&amp;                                <a class="code hl_function" href="classchess3d_1_1_chess_game.html#aa3b3217fc1266757855f34dde79fe66e">pgnHeader</a>(<span class="keyword">const</span> std::string&amp; key) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">// For renderer to know what to highlight.</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classchess3d_1_1_chess_game.html#aaadb6b91834a4651d5880dc3b0aacf8f">   48</a></span>    <span class="keywordtype">bool</span>        <a class="code hl_function" href="classchess3d_1_1_chess_game.html#aaadb6b91834a4651d5880dc3b0aacf8f">hasLastMove</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currentMoveIndex_ &gt; 0; }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classchess3d_1_1_chess_game.html#a56d88806d3f3c4b72ef494dd99cc0c4a">   49</a></span>    <span class="keyword">const</span> <a class="code hl_struct" href="structchess3d_1_1_move.html">Move</a>&amp; <a class="code hl_function" href="classchess3d_1_1_chess_game.html#a56d88806d3f3c4b72ef494dd99cc0c4a">lastMove</a>()<span class="keyword">    const </span>{ <span class="keywordflow">return</span> moves_[currentMoveIndex_ - 1]; }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">// ----- logical board (for PGN move resolution) -----</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">struct </span>BoardSlot {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <a class="code hl_class" href="classchess3d_1_1_chess_piece.html">ChessPiece</a>* piece = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    };</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    std::array&lt;BoardSlot, 64&gt; board_{};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> idx(<span class="keywordtype">int</span> f, <span class="keywordtype">int</span> r) { <span class="keywordflow">return</span> r * 8 + f; }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    ChessPiece* pieceAt(Square s) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> placePiece(ChessPiece* p, Square s);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> removeAt(Square s);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="comment">// Move resolution / application ------------------------------------</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">bool</span> resolveMove(Move&amp; m, <a class="code hl_enumeration" href="namespacechess3d.html#a35bb0f3249585a92686439f2fec6829b">Color</a> toMove) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">bool</span> canPieceReach(<span class="keyword">const</span> ChessPiece&amp; p, Square to, <span class="keywordtype">bool</span> isCapture) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> applyMoveAnimated(<span class="keyword">const</span> Move&amp; m);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">void</span> applyMoveLogical (<span class="keyword">const</span> Move&amp; m);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">// ----- members -----</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    std::vector&lt;std::unique_ptr&lt;ChessPiece&gt;&gt; pieces_;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    std::vector&lt;Move&gt;                        moves_;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    std::vector&lt;std::pair&lt;std::string, std::string&gt;&gt; headers_;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">int</span>   currentMoveIndex_ = 0;   <span class="comment">// = number of moves already played</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">bool</span>  playing_          = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">float</span> speed_            = 1.0f;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">float</span> autoPlayAccum_    = 0.0f;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>};</div>
+</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>} <span class="comment">// namespace chess3d</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="ttc" id="a_chess_piece_8h_html"><div class="ttname"><a href="_chess_piece_8h.html">ChessPiece.h</a></div><div class="ttdoc">Plik zrodlowy projektu Chess3D.</div></div>
+<div class="ttc" id="a_common_8h_html"><div class="ttname"><a href="_common_8h.html">Common.h</a></div><div class="ttdoc">Plik zrodlowy projektu Chess3D.</div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_a0745d20707bc44309cbf1d5731229d61"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#a0745d20707bc44309cbf1d5731229d61">chess3d::ChessGame::currentMoveIndex</a></div><div class="ttdeci">int currentMoveIndex() const</div><div class="ttdef"><b>Definicja</b> <a href="#l00043">ChessGame.h:43</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_a07a3e84157d4f8c0d12d34cf4e85d096"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#a07a3e84157d4f8c0d12d34cf4e85d096">chess3d::ChessGame::isPlaying</a></div><div class="ttdeci">bool isPlaying() const</div><div class="ttdef"><b>Definicja</b> <a href="#l00029">ChessGame.h:29</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_a23b208e78bc31311bb88b2d86e4148bc"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#a23b208e78bc31311bb88b2d86e4148bc">chess3d::ChessGame::ChessGame</a></div><div class="ttdeci">ChessGame()</div><div class="ttdef"><b>Definicja</b> <a href="_chess_game_8cpp_source.html#l00015">ChessGame.cpp:15</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_a32203398e5b70cdf8d732f3f325fc8a4"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#a32203398e5b70cdf8d732f3f325fc8a4">chess3d::ChessGame::setSpeed</a></div><div class="ttdeci">void setSpeed(float movesPerSecond)</div><div class="ttdef"><b>Definicja</b> <a href="#l00037">ChessGame.h:37</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_a56d88806d3f3c4b72ef494dd99cc0c4a"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#a56d88806d3f3c4b72ef494dd99cc0c4a">chess3d::ChessGame::lastMove</a></div><div class="ttdeci">const Move &amp; lastMove() const</div><div class="ttdef"><b>Definicja</b> <a href="#l00049">ChessGame.h:49</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_a71fec711e4e73ddcbedf9e297f6d9af2"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#a71fec711e4e73ddcbedf9e297f6d9af2">chess3d::ChessGame::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdef"><b>Definicja</b> <a href="#l00027">ChessGame.h:27</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_a72db2289c5b73b1ae2a015284205f3ba"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#a72db2289c5b73b1ae2a015284205f3ba">chess3d::ChessGame::stepBackward</a></div><div class="ttdeci">bool stepBackward()</div><div class="ttdef"><b>Definicja</b> <a href="_chess_game_8cpp_source.html#l00254">ChessGame.cpp:254</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_a76e155a2129b37e26eeb307dc4eda250"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#a76e155a2129b37e26eeb307dc4eda250">chess3d::ChessGame::totalMoves</a></div><div class="ttdeci">int totalMoves() const</div><div class="ttdef"><b>Definicja</b> <a href="#l00044">ChessGame.h:44</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_a7eef1e8ad62480069ba978fdce3955cb"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#a7eef1e8ad62480069ba978fdce3955cb">chess3d::ChessGame::play</a></div><div class="ttdeci">void play()</div><div class="ttdef"><b>Definicja</b> <a href="#l00026">ChessGame.h:26</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_a813237e092b1c8e157b5b47210d478ae"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#a813237e092b1c8e157b5b47210d478ae">chess3d::ChessGame::togglePlay</a></div><div class="ttdeci">void togglePlay()</div><div class="ttdef"><b>Definicja</b> <a href="#l00028">ChessGame.h:28</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_a93ba9d0c9ecfb6afe68e3df6a07032bc"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#a93ba9d0c9ecfb6afe68e3df6a07032bc">chess3d::ChessGame::pieces</a></div><div class="ttdeci">const std::vector&lt; std::unique_ptr&lt; ChessPiece &gt; &gt; &amp; pieces() const</div><div class="ttdef"><b>Definicja</b> <a href="#l00042">ChessGame.h:42</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_a950f35b75d685c9be7e00ca8e187fd48"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#a950f35b75d685c9be7e00ca8e187fd48">chess3d::ChessGame::moves</a></div><div class="ttdeci">const std::vector&lt; Move &gt; &amp; moves() const</div><div class="ttdef"><b>Definicja</b> <a href="#l00041">ChessGame.h:41</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_aa10f6aa594e65e8428b4b6905a4710f5"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#aa10f6aa594e65e8428b4b6905a4710f5">chess3d::ChessGame::speed</a></div><div class="ttdeci">float speed() const</div><div class="ttdef"><b>Definicja</b> <a href="#l00038">ChessGame.h:38</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_aa3b3217fc1266757855f34dde79fe66e"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#aa3b3217fc1266757855f34dde79fe66e">chess3d::ChessGame::pgnHeader</a></div><div class="ttdeci">const std::string &amp; pgnHeader(const std::string &amp;key) const</div><div class="ttdef"><b>Definicja</b> <a href="_chess_game_8cpp_source.html#l00308">ChessGame.cpp:308</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_aa8f64ab640254441c4a66918eac48fd3"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#aa8f64ab640254441c4a66918eac48fd3">chess3d::ChessGame::update</a></div><div class="ttdeci">void update(float dt)</div><div class="ttdef"><b>Definicja</b> <a href="_chess_game_8cpp_source.html#l00277">ChessGame.cpp:277</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_aaadb6b91834a4651d5880dc3b0aacf8f"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#aaadb6b91834a4651d5880dc3b0aacf8f">chess3d::ChessGame::hasLastMove</a></div><div class="ttdeci">bool hasLastMove() const</div><div class="ttdef"><b>Definicja</b> <a href="#l00048">ChessGame.h:48</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_af3a0911beb87914fac8d329489cf0cd8"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#af3a0911beb87914fac8d329489cf0cd8">chess3d::ChessGame::loadPGNFile</a></div><div class="ttdeci">bool loadPGNFile(const std::string &amp;path)</div><div class="ttdef"><b>Definicja</b> <a href="_chess_game_8cpp_source.html#l00295">ChessGame.cpp:295</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_afb274c7bd959b611bd6599a0eab8ac32"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#afb274c7bd959b611bd6599a0eab8ac32">chess3d::ChessGame::stepForward</a></div><div class="ttdeci">bool stepForward()</div><div class="ttdef"><b>Definicja</b> <a href="_chess_game_8cpp_source.html#l00239">ChessGame.cpp:239</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_game_html_afdc95080146e417189a134842453c0b8"><div class="ttname"><a href="classchess3d_1_1_chess_game.html#afdc95080146e417189a134842453c0b8">chess3d::ChessGame::resetToStartingPosition</a></div><div class="ttdeci">void resetToStartingPosition()</div><div class="ttdef"><b>Definicja</b> <a href="_chess_game_8cpp_source.html#l00019">ChessGame.cpp:19</a></div></div>
+<div class="ttc" id="aclasschess3d_1_1_chess_piece_html"><div class="ttname"><a href="classchess3d_1_1_chess_piece.html">chess3d::ChessPiece</a></div><div class="ttdef"><b>Definicja</b> <a href="_chess_piece_8h_source.html#l00016">ChessPiece.h:16</a></div></div>
+<div class="ttc" id="anamespacechess3d_html"><div class="ttname"><a href="namespacechess3d.html">chess3d</a></div><div class="ttdef"><b>Definicja</b> <a href="_animator_8cpp_source.html#l00010">Animator.cpp:10</a></div></div>
+<div class="ttc" id="anamespacechess3d_html_a35bb0f3249585a92686439f2fec6829b"><div class="ttname"><a href="namespacechess3d.html#a35bb0f3249585a92686439f2fec6829b">chess3d::Color</a></div><div class="ttdeci">Color</div><div class="ttdef"><b>Definicja</b> <a href="_common_8h_source.html#l00026">Common.h:26</a></div></div>
+<div class="ttc" id="astructchess3d_1_1_move_html"><div class="ttname"><a href="structchess3d_1_1_move.html">chess3d::Move</a></div><div class="ttdef"><b>Definicja</b> <a href="_common_8h_source.html#l00049">Common.h:49</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="_chess_game_8h.html">ChessGame.h</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Chess3D: Dokumentacja klasy chess3d::Shader</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Chess3D
+   </div>
+   <div id="projectbrief">Projekt grafiki komputerowej - wizualizacja partii szachowej 3D.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classchess3d_1_1_shader.html','','classchess3d_1_1_shader-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy chess3d::Shader</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Osłona nad programem cieniującym OpenGL i jego uniformami.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_shader_8h_source.html">Shader.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a8d3801644d3cefb171fe979e20a0646c" id="r_a8d3801644d3cefb171fe979e20a0646c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8d3801644d3cefb171fe979e20a0646c">Shader</a> ()=default</td></tr>
+<tr class="memitem:a86da5f463b3a58c7b62999e9a63fd672" id="r_a86da5f463b3a58c7b62999e9a63fd672"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a86da5f463b3a58c7b62999e9a63fd672">~Shader</a> ()</td></tr>
+<tr class="memitem:a963e7a82ce7f91e391a2c5a39a87d8f1" id="r_a963e7a82ce7f91e391a2c5a39a87d8f1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a963e7a82ce7f91e391a2c5a39a87d8f1">Shader</a> (const Shader &amp;)=delete</td></tr>
+<tr class="memitem:a7762107260da166d73606bc484a34fa6" id="r_a7762107260da166d73606bc484a34fa6"><td class="memItemLeft"><a class="el" href="#a8d3801644d3cefb171fe979e20a0646c">Shader</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a7762107260da166d73606bc484a34fa6">operator=</a> (const <a class="el" href="#a8d3801644d3cefb171fe979e20a0646c">Shader</a> &amp;)=delete</td></tr>
+<tr class="memitem:a3336f14a7854c39c2b6d80669211d6d8" id="r_a3336f14a7854c39c2b6d80669211d6d8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3336f14a7854c39c2b6d80669211d6d8">Shader</a> (Shader &amp;&amp;other) noexcept</td></tr>
+<tr class="memitem:a3614f47a8eab502313acf65b056132c5" id="r_a3614f47a8eab502313acf65b056132c5"><td class="memItemLeft"><a class="el" href="#a8d3801644d3cefb171fe979e20a0646c">Shader</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a3614f47a8eab502313acf65b056132c5">operator=</a> (<a class="el" href="#a8d3801644d3cefb171fe979e20a0646c">Shader</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memitem:a32c19f4381e8395f099951eb50fa795e" id="r_a32c19f4381e8395f099951eb50fa795e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a32c19f4381e8395f099951eb50fa795e">loadFromFiles</a> (const std::string &amp;vertexPath, const std::string &amp;fragmentPath)</td></tr>
+<tr class="memitem:a2bb3c9fd11f6107e44fa3aae03de3af7" id="r_a2bb3c9fd11f6107e44fa3aae03de3af7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2bb3c9fd11f6107e44fa3aae03de3af7">bind</a> () const</td></tr>
+<tr class="memitem:aa14d7223fcf110ec29337d900df29a6d" id="r_aa14d7223fcf110ec29337d900df29a6d"><td class="memItemLeft">GLuint&#160;</td><td class="memItemRight"><a class="el" href="#aa14d7223fcf110ec29337d900df29a6d">id</a> () const</td></tr>
+<tr class="memitem:a04a91bc5fec908695beb10c3dd0c2058" id="r_a04a91bc5fec908695beb10c3dd0c2058"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a04a91bc5fec908695beb10c3dd0c2058">setBool</a> (const std::string &amp;name, bool value) const</td></tr>
+<tr class="memitem:ac36fc265bdd78dfeb2154bc73bfa2202" id="r_ac36fc265bdd78dfeb2154bc73bfa2202"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac36fc265bdd78dfeb2154bc73bfa2202">setInt</a> (const std::string &amp;name, int value) const</td></tr>
+<tr class="memitem:ab8bd2495bf788ab5a2af738b9b1a607f" id="r_ab8bd2495bf788ab5a2af738b9b1a607f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab8bd2495bf788ab5a2af738b9b1a607f">setFloat</a> (const std::string &amp;name, float value) const</td></tr>
+<tr class="memitem:a360baf2f24547e296bf256cc855f85bf" id="r_a360baf2f24547e296bf256cc855f85bf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a360baf2f24547e296bf256cc855f85bf">setVec3</a> (const std::string &amp;name, const glm::vec3 &amp;v) const</td></tr>
+<tr class="memitem:a499656797b4c8a44f6317a998d82bf4d" id="r_a499656797b4c8a44f6317a998d82bf4d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a499656797b4c8a44f6317a998d82bf4d">setMat3</a> (const std::string &amp;name, const glm::mat3 &amp;m) const</td></tr>
+<tr class="memitem:ab9bad788c21698bb2bbae256165b5ccb" id="r_ab9bad788c21698bb2bbae256165b5ccb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab9bad788c21698bb2bbae256165b5ccb">setMat4</a> (const std::string &amp;name, const glm::mat4 &amp;m) const</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Osłona nad programem cieniującym OpenGL i jego uniformami. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_shader_8h_source.html#l00016">16</a> pliku <a class="el" href="_shader_8h_source.html">Shader.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a8d3801644d3cefb171fe979e20a0646c" name="a8d3801644d3cefb171fe979e20a0646c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d3801644d3cefb171fe979e20a0646c">&#9670;&#160;</a></span>Shader() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">chess3d::Shader::Shader </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a86da5f463b3a58c7b62999e9a63fd672" name="a86da5f463b3a58c7b62999e9a63fd672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86da5f463b3a58c7b62999e9a63fd672">&#9670;&#160;</a></span>~Shader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">chess3d::Shader::~Shader </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_shader_8cpp_source.html#l00015">15</a> pliku <a class="el" href="_shader_8cpp_source.html">Shader.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a963e7a82ce7f91e391a2c5a39a87d8f1" name="a963e7a82ce7f91e391a2c5a39a87d8f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a963e7a82ce7f91e391a2c5a39a87d8f1">&#9670;&#160;</a></span>Shader() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">chess3d::Shader::Shader </td>
+          <td>(</td>
+          <td class="paramtype">const Shader &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3336f14a7854c39c2b6d80669211d6d8" name="a3336f14a7854c39c2b6d80669211d6d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3336f14a7854c39c2b6d80669211d6d8">&#9670;&#160;</a></span>Shader() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">chess3d::Shader::Shader </td>
+          <td>(</td>
+          <td class="paramtype">Shader &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_shader_8cpp_source.html#l00022">22</a> pliku <a class="el" href="_shader_8cpp_source.html">Shader.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a2bb3c9fd11f6107e44fa3aae03de3af7" name="a2bb3c9fd11f6107e44fa3aae03de3af7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bb3c9fd11f6107e44fa3aae03de3af7">&#9670;&#160;</a></span>bind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::Shader::bind </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_shader_8cpp_source.html#l00119">119</a> pliku <a class="el" href="_shader_8cpp_source.html">Shader.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa14d7223fcf110ec29337d900df29a6d" name="aa14d7223fcf110ec29337d900df29a6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa14d7223fcf110ec29337d900df29a6d">&#9670;&#160;</a></span>id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint chess3d::Shader::id </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_shader_8h_source.html#l00030">30</a> pliku <a class="el" href="_shader_8h_source.html">Shader.h</a>.</p>
+
+</div>
+</div>
+<a id="a32c19f4381e8395f099951eb50fa795e" name="a32c19f4381e8395f099951eb50fa795e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32c19f4381e8395f099951eb50fa795e">&#9670;&#160;</a></span>loadFromFiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chess3d::Shader::loadFromFiles </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>vertexPath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>fragmentPath</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_shader_8cpp_source.html#l00105">105</a> pliku <a class="el" href="_shader_8cpp_source.html">Shader.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7762107260da166d73606bc484a34fa6" name="a7762107260da166d73606bc484a34fa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7762107260da166d73606bc484a34fa6">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a8d3801644d3cefb171fe979e20a0646c">Shader</a> &amp; chess3d::Shader::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a8d3801644d3cefb171fe979e20a0646c">Shader</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3614f47a8eab502313acf65b056132c5" name="a3614f47a8eab502313acf65b056132c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3614f47a8eab502313acf65b056132c5">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a8d3801644d3cefb171fe979e20a0646c">Shader</a> &amp; chess3d::Shader::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a8d3801644d3cefb171fe979e20a0646c">Shader</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_shader_8cpp_source.html#l00028">28</a> pliku <a class="el" href="_shader_8cpp_source.html">Shader.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a04a91bc5fec908695beb10c3dd0c2058" name="a04a91bc5fec908695beb10c3dd0c2058"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04a91bc5fec908695beb10c3dd0c2058">&#9670;&#160;</a></span>setBool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::Shader::setBool </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_shader_8cpp_source.html#l00129">129</a> pliku <a class="el" href="_shader_8cpp_source.html">Shader.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab8bd2495bf788ab5a2af738b9b1a607f" name="ab8bd2495bf788ab5a2af738b9b1a607f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8bd2495bf788ab5a2af738b9b1a607f">&#9670;&#160;</a></span>setFloat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::Shader::setFloat </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_shader_8cpp_source.html#l00131">131</a> pliku <a class="el" href="_shader_8cpp_source.html">Shader.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac36fc265bdd78dfeb2154bc73bfa2202" name="ac36fc265bdd78dfeb2154bc73bfa2202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac36fc265bdd78dfeb2154bc73bfa2202">&#9670;&#160;</a></span>setInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::Shader::setInt </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_shader_8cpp_source.html#l00130">130</a> pliku <a class="el" href="_shader_8cpp_source.html">Shader.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a499656797b4c8a44f6317a998d82bf4d" name="a499656797b4c8a44f6317a998d82bf4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a499656797b4c8a44f6317a998d82bf4d">&#9670;&#160;</a></span>setMat3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::Shader::setMat3 </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const glm::mat3 &amp;</td>          <td class="paramname"><span class="paramname"><em>m</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_shader_8cpp_source.html#l00133">133</a> pliku <a class="el" href="_shader_8cpp_source.html">Shader.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab9bad788c21698bb2bbae256165b5ccb" name="ab9bad788c21698bb2bbae256165b5ccb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9bad788c21698bb2bbae256165b5ccb">&#9670;&#160;</a></span>setMat4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::Shader::setMat4 </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const glm::mat4 &amp;</td>          <td class="paramname"><span class="paramname"><em>m</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_shader_8cpp_source.html#l00134">134</a> pliku <a class="el" href="_shader_8cpp_source.html">Shader.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a360baf2f24547e296bf256cc855f85bf" name="a360baf2f24547e296bf256cc855f85bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a360baf2f24547e296bf256cc855f85bf">&#9670;&#160;</a></span>setVec3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::Shader::setVec3 </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const glm::vec3 &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_shader_8cpp_source.html#l00132">132</a> pliku <a class="el" href="_shader_8cpp_source.html">Shader.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="_shader_8h_source.html">Shader.h</a></li>
+<li><a class="el" href="_shader_8cpp_source.html">Shader.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacechess3d.html">chess3d</a></li><li class="navelem"><a href="classchess3d_1_1_shader.html">Shader</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

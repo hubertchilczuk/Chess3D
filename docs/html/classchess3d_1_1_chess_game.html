@@ -1,0 +1,635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Chess3D: Dokumentacja klasy chess3d::ChessGame</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Chess3D
+   </div>
+   <div id="projectbrief">Projekt grafiki komputerowej - wizualizacja partii szachowej 3D.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classchess3d_1_1_chess_game.html','','classchess3d_1_1_chess_game-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy chess3d::ChessGame</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Zarządza stanem partii, listą ruchów PGN i animacją odtwarzania.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_chess_game_8h_source.html">ChessGame.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a23b208e78bc31311bb88b2d86e4148bc" id="r_a23b208e78bc31311bb88b2d86e4148bc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a23b208e78bc31311bb88b2d86e4148bc">ChessGame</a> ()</td></tr>
+<tr class="memitem:afdc95080146e417189a134842453c0b8" id="r_afdc95080146e417189a134842453c0b8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afdc95080146e417189a134842453c0b8">resetToStartingPosition</a> ()</td></tr>
+<tr class="memitem:af3a0911beb87914fac8d329489cf0cd8" id="r_af3a0911beb87914fac8d329489cf0cd8"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af3a0911beb87914fac8d329489cf0cd8">loadPGNFile</a> (const std::string &amp;path)</td></tr>
+<tr class="memitem:a7eef1e8ad62480069ba978fdce3955cb" id="r_a7eef1e8ad62480069ba978fdce3955cb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7eef1e8ad62480069ba978fdce3955cb">play</a> ()</td></tr>
+<tr class="memitem:a71fec711e4e73ddcbedf9e297f6d9af2" id="r_a71fec711e4e73ddcbedf9e297f6d9af2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a71fec711e4e73ddcbedf9e297f6d9af2">pause</a> ()</td></tr>
+<tr class="memitem:a813237e092b1c8e157b5b47210d478ae" id="r_a813237e092b1c8e157b5b47210d478ae"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a813237e092b1c8e157b5b47210d478ae">togglePlay</a> ()</td></tr>
+<tr class="memitem:a07a3e84157d4f8c0d12d34cf4e85d096" id="r_a07a3e84157d4f8c0d12d34cf4e85d096"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a07a3e84157d4f8c0d12d34cf4e85d096">isPlaying</a> () const</td></tr>
+<tr class="memitem:afb274c7bd959b611bd6599a0eab8ac32" id="r_afb274c7bd959b611bd6599a0eab8ac32"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#afb274c7bd959b611bd6599a0eab8ac32">stepForward</a> ()</td></tr>
+<tr class="memitem:a72db2289c5b73b1ae2a015284205f3ba" id="r_a72db2289c5b73b1ae2a015284205f3ba"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a72db2289c5b73b1ae2a015284205f3ba">stepBackward</a> ()</td></tr>
+<tr class="memitem:aa8f64ab640254441c4a66918eac48fd3" id="r_aa8f64ab640254441c4a66918eac48fd3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa8f64ab640254441c4a66918eac48fd3">update</a> (float dt)</td></tr>
+<tr class="memitem:a32203398e5b70cdf8d732f3f325fc8a4" id="r_a32203398e5b70cdf8d732f3f325fc8a4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a32203398e5b70cdf8d732f3f325fc8a4">setSpeed</a> (float movesPerSecond)</td></tr>
+<tr class="memitem:aa10f6aa594e65e8428b4b6905a4710f5" id="r_aa10f6aa594e65e8428b4b6905a4710f5"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#aa10f6aa594e65e8428b4b6905a4710f5">speed</a> () const</td></tr>
+<tr class="memitem:a950f35b75d685c9be7e00ca8e187fd48" id="r_a950f35b75d685c9be7e00ca8e187fd48"><td class="memItemLeft">const std::vector&lt; <a class="el" href="structchess3d_1_1_move.html">Move</a> &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a950f35b75d685c9be7e00ca8e187fd48">moves</a> () const</td></tr>
+<tr class="memitem:a93ba9d0c9ecfb6afe68e3df6a07032bc" id="r_a93ba9d0c9ecfb6afe68e3df6a07032bc"><td class="memItemLeft">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classchess3d_1_1_chess_piece.html">ChessPiece</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a93ba9d0c9ecfb6afe68e3df6a07032bc">pieces</a> () const</td></tr>
+<tr class="memitem:a0745d20707bc44309cbf1d5731229d61" id="r_a0745d20707bc44309cbf1d5731229d61"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a0745d20707bc44309cbf1d5731229d61">currentMoveIndex</a> () const</td></tr>
+<tr class="memitem:a76e155a2129b37e26eeb307dc4eda250" id="r_a76e155a2129b37e26eeb307dc4eda250"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a76e155a2129b37e26eeb307dc4eda250">totalMoves</a> () const</td></tr>
+<tr class="memitem:aa3b3217fc1266757855f34dde79fe66e" id="r_aa3b3217fc1266757855f34dde79fe66e"><td class="memItemLeft">const std::string &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aa3b3217fc1266757855f34dde79fe66e">pgnHeader</a> (const std::string &amp;key) const</td></tr>
+<tr class="memitem:aaadb6b91834a4651d5880dc3b0aacf8f" id="r_aaadb6b91834a4651d5880dc3b0aacf8f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aaadb6b91834a4651d5880dc3b0aacf8f">hasLastMove</a> () const</td></tr>
+<tr class="memitem:a56d88806d3f3c4b72ef494dd99cc0c4a" id="r_a56d88806d3f3c4b72ef494dd99cc0c4a"><td class="memItemLeft">const <a class="el" href="structchess3d_1_1_move.html">Move</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a56d88806d3f3c4b72ef494dd99cc0c4a">lastMove</a> () const</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Zarządza stanem partii, listą ruchów PGN i animacją odtwarzania. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8h_source.html#l00018">18</a> pliku <a class="el" href="_chess_game_8h_source.html">ChessGame.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a23b208e78bc31311bb88b2d86e4148bc" name="a23b208e78bc31311bb88b2d86e4148bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23b208e78bc31311bb88b2d86e4148bc">&#9670;&#160;</a></span>ChessGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">chess3d::ChessGame::ChessGame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8cpp_source.html#l00015">15</a> pliku <a class="el" href="_chess_game_8cpp_source.html">ChessGame.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a0745d20707bc44309cbf1d5731229d61" name="a0745d20707bc44309cbf1d5731229d61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0745d20707bc44309cbf1d5731229d61">&#9670;&#160;</a></span>currentMoveIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int chess3d::ChessGame::currentMoveIndex </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8h_source.html#l00043">43</a> pliku <a class="el" href="_chess_game_8h_source.html">ChessGame.h</a>.</p>
+
+</div>
+</div>
+<a id="aaadb6b91834a4651d5880dc3b0aacf8f" name="aaadb6b91834a4651d5880dc3b0aacf8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaadb6b91834a4651d5880dc3b0aacf8f">&#9670;&#160;</a></span>hasLastMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chess3d::ChessGame::hasLastMove </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8h_source.html#l00048">48</a> pliku <a class="el" href="_chess_game_8h_source.html">ChessGame.h</a>.</p>
+
+</div>
+</div>
+<a id="a07a3e84157d4f8c0d12d34cf4e85d096" name="a07a3e84157d4f8c0d12d34cf4e85d096"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07a3e84157d4f8c0d12d34cf4e85d096">&#9670;&#160;</a></span>isPlaying()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chess3d::ChessGame::isPlaying </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8h_source.html#l00029">29</a> pliku <a class="el" href="_chess_game_8h_source.html">ChessGame.h</a>.</p>
+
+</div>
+</div>
+<a id="a56d88806d3f3c4b72ef494dd99cc0c4a" name="a56d88806d3f3c4b72ef494dd99cc0c4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56d88806d3f3c4b72ef494dd99cc0c4a">&#9670;&#160;</a></span>lastMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structchess3d_1_1_move.html">Move</a> &amp; chess3d::ChessGame::lastMove </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8h_source.html#l00049">49</a> pliku <a class="el" href="_chess_game_8h_source.html">ChessGame.h</a>.</p>
+
+</div>
+</div>
+<a id="af3a0911beb87914fac8d329489cf0cd8" name="af3a0911beb87914fac8d329489cf0cd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3a0911beb87914fac8d329489cf0cd8">&#9670;&#160;</a></span>loadPGNFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chess3d::ChessGame::loadPGNFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8cpp_source.html#l00295">295</a> pliku <a class="el" href="_chess_game_8cpp_source.html">ChessGame.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a950f35b75d685c9be7e00ca8e187fd48" name="a950f35b75d685c9be7e00ca8e187fd48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a950f35b75d685c9be7e00ca8e187fd48">&#9670;&#160;</a></span>moves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="structchess3d_1_1_move.html">Move</a> &gt; &amp; chess3d::ChessGame::moves </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8h_source.html#l00041">41</a> pliku <a class="el" href="_chess_game_8h_source.html">ChessGame.h</a>.</p>
+
+</div>
+</div>
+<a id="a71fec711e4e73ddcbedf9e297f6d9af2" name="a71fec711e4e73ddcbedf9e297f6d9af2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71fec711e4e73ddcbedf9e297f6d9af2">&#9670;&#160;</a></span>pause()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::ChessGame::pause </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8h_source.html#l00027">27</a> pliku <a class="el" href="_chess_game_8h_source.html">ChessGame.h</a>.</p>
+
+</div>
+</div>
+<a id="aa3b3217fc1266757855f34dde79fe66e" name="aa3b3217fc1266757855f34dde79fe66e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3b3217fc1266757855f34dde79fe66e">&#9670;&#160;</a></span>pgnHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; chess3d::ChessGame::pgnHeader </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8cpp_source.html#l00308">308</a> pliku <a class="el" href="_chess_game_8cpp_source.html">ChessGame.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a93ba9d0c9ecfb6afe68e3df6a07032bc" name="a93ba9d0c9ecfb6afe68e3df6a07032bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93ba9d0c9ecfb6afe68e3df6a07032bc">&#9670;&#160;</a></span>pieces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classchess3d_1_1_chess_piece.html">ChessPiece</a> &gt; &gt; &amp; chess3d::ChessGame::pieces </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8h_source.html#l00042">42</a> pliku <a class="el" href="_chess_game_8h_source.html">ChessGame.h</a>.</p>
+
+</div>
+</div>
+<a id="a7eef1e8ad62480069ba978fdce3955cb" name="a7eef1e8ad62480069ba978fdce3955cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eef1e8ad62480069ba978fdce3955cb">&#9670;&#160;</a></span>play()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::ChessGame::play </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8h_source.html#l00026">26</a> pliku <a class="el" href="_chess_game_8h_source.html">ChessGame.h</a>.</p>
+
+</div>
+</div>
+<a id="afdc95080146e417189a134842453c0b8" name="afdc95080146e417189a134842453c0b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdc95080146e417189a134842453c0b8">&#9670;&#160;</a></span>resetToStartingPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::ChessGame::resetToStartingPosition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8cpp_source.html#l00019">19</a> pliku <a class="el" href="_chess_game_8cpp_source.html">ChessGame.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a32203398e5b70cdf8d732f3f325fc8a4" name="a32203398e5b70cdf8d732f3f325fc8a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32203398e5b70cdf8d732f3f325fc8a4">&#9670;&#160;</a></span>setSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::ChessGame::setSpeed </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>movesPerSecond</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8h_source.html#l00037">37</a> pliku <a class="el" href="_chess_game_8h_source.html">ChessGame.h</a>.</p>
+
+</div>
+</div>
+<a id="aa10f6aa594e65e8428b4b6905a4710f5" name="aa10f6aa594e65e8428b4b6905a4710f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa10f6aa594e65e8428b4b6905a4710f5">&#9670;&#160;</a></span>speed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float chess3d::ChessGame::speed </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8h_source.html#l00038">38</a> pliku <a class="el" href="_chess_game_8h_source.html">ChessGame.h</a>.</p>
+
+</div>
+</div>
+<a id="a72db2289c5b73b1ae2a015284205f3ba" name="a72db2289c5b73b1ae2a015284205f3ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72db2289c5b73b1ae2a015284205f3ba">&#9670;&#160;</a></span>stepBackward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chess3d::ChessGame::stepBackward </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8cpp_source.html#l00254">254</a> pliku <a class="el" href="_chess_game_8cpp_source.html">ChessGame.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afb274c7bd959b611bd6599a0eab8ac32" name="afb274c7bd959b611bd6599a0eab8ac32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb274c7bd959b611bd6599a0eab8ac32">&#9670;&#160;</a></span>stepForward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chess3d::ChessGame::stepForward </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8cpp_source.html#l00239">239</a> pliku <a class="el" href="_chess_game_8cpp_source.html">ChessGame.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a813237e092b1c8e157b5b47210d478ae" name="a813237e092b1c8e157b5b47210d478ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a813237e092b1c8e157b5b47210d478ae">&#9670;&#160;</a></span>togglePlay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::ChessGame::togglePlay </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8h_source.html#l00028">28</a> pliku <a class="el" href="_chess_game_8h_source.html">ChessGame.h</a>.</p>
+
+</div>
+</div>
+<a id="a76e155a2129b37e26eeb307dc4eda250" name="a76e155a2129b37e26eeb307dc4eda250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76e155a2129b37e26eeb307dc4eda250">&#9670;&#160;</a></span>totalMoves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int chess3d::ChessGame::totalMoves </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8h_source.html#l00044">44</a> pliku <a class="el" href="_chess_game_8h_source.html">ChessGame.h</a>.</p>
+
+</div>
+</div>
+<a id="aa8f64ab640254441c4a66918eac48fd3" name="aa8f64ab640254441c4a66918eac48fd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8f64ab640254441c4a66918eac48fd3">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::ChessGame::update </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dt</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_chess_game_8cpp_source.html#l00277">277</a> pliku <a class="el" href="_chess_game_8cpp_source.html">ChessGame.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="_chess_game_8h_source.html">ChessGame.h</a></li>
+<li><a class="el" href="_chess_game_8cpp_source.html">ChessGame.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacechess3d.html">chess3d</a></li><li class="navelem"><a href="classchess3d_1_1_chess_game.html">ChessGame</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

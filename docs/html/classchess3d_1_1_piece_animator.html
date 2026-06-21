@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Chess3D: Dokumentacja klasy chess3d::PieceAnimator</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Chess3D
+   </div>
+   <div id="projectbrief">Projekt grafiki komputerowej - wizualizacja partii szachowej 3D.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classchess3d_1_1_piece_animator.html','','classchess3d_1_1_piece_animator-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy chess3d::PieceAnimator</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_animator_8h_source.html">Animator.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a3d4de0ba5a1a573cb34eb68086de0400" id="r_a3d4de0ba5a1a573cb34eb68086de0400"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3d4de0ba5a1a573cb34eb68086de0400">snapTo</a> (const glm::vec3 &amp;p)</td></tr>
+<tr class="memitem:a3ae076b15a1f06fe58709440ddead045" id="r_a3ae076b15a1f06fe58709440ddead045"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3ae076b15a1f06fe58709440ddead045">moveTo</a> (const glm::vec3 &amp;target, float durationSeconds)</td></tr>
+<tr class="memitem:a8c3e4df96e4c3664df28ea72aa7c227b" id="r_a8c3e4df96e4c3664df28ea72aa7c227b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8c3e4df96e4c3664df28ea72aa7c227b">update</a> (float dt)</td></tr>
+<tr class="memitem:a6a5915a9ebbc25a1d411d6d91a4287d0" id="r_a6a5915a9ebbc25a1d411d6d91a4287d0"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6a5915a9ebbc25a1d411d6d91a4287d0">isPlaying</a> () const</td></tr>
+<tr class="memitem:a1508ac16ccacefd1f2dd0b21085e2028" id="r_a1508ac16ccacefd1f2dd0b21085e2028"><td class="memItemLeft">glm::vec3&#160;</td><td class="memItemRight"><a class="el" href="#a1508ac16ccacefd1f2dd0b21085e2028">currentPosition</a> () const</td></tr>
+<tr class="memitem:af007e9e6b98d0ac9d9eaa1df37e03698" id="r_af007e9e6b98d0ac9d9eaa1df37e03698"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af007e9e6b98d0ac9d9eaa1df37e03698">setHopAmplitude</a> (float a)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock">
+<p class="definition">Definicja w linii <a class="el" href="_animator_8h_source.html#l00026">26</a> pliku <a class="el" href="_animator_8h_source.html">Animator.h</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a1508ac16ccacefd1f2dd0b21085e2028" name="a1508ac16ccacefd1f2dd0b21085e2028"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1508ac16ccacefd1f2dd0b21085e2028">&#9670;&#160;</a></span>currentPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 chess3d::PieceAnimator::currentPosition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_animator_8cpp_source.html#l00038">38</a> pliku <a class="el" href="_animator_8cpp_source.html">Animator.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6a5915a9ebbc25a1d411d6d91a4287d0" name="a6a5915a9ebbc25a1d411d6d91a4287d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a5915a9ebbc25a1d411d6d91a4287d0">&#9670;&#160;</a></span>isPlaying()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chess3d::PieceAnimator::isPlaying </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_animator_8h_source.html#l00032">32</a> pliku <a class="el" href="_animator_8h_source.html">Animator.h</a>.</p>
+
+</div>
+</div>
+<a id="a3ae076b15a1f06fe58709440ddead045" name="a3ae076b15a1f06fe58709440ddead045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ae076b15a1f06fe58709440ddead045">&#9670;&#160;</a></span>moveTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::PieceAnimator::moveTo </td>
+          <td>(</td>
+          <td class="paramtype">const glm::vec3 &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>durationSeconds</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_animator_8cpp_source.html#l00020">20</a> pliku <a class="el" href="_animator_8cpp_source.html">Animator.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af007e9e6b98d0ac9d9eaa1df37e03698" name="af007e9e6b98d0ac9d9eaa1df37e03698"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af007e9e6b98d0ac9d9eaa1df37e03698">&#9670;&#160;</a></span>setHopAmplitude()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::PieceAnimator::setHopAmplitude </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>a</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_animator_8h_source.html#l00036">36</a> pliku <a class="el" href="_animator_8h_source.html">Animator.h</a>.</p>
+
+</div>
+</div>
+<a id="a3d4de0ba5a1a573cb34eb68086de0400" name="a3d4de0ba5a1a573cb34eb68086de0400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d4de0ba5a1a573cb34eb68086de0400">&#9670;&#160;</a></span>snapTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::PieceAnimator::snapTo </td>
+          <td>(</td>
+          <td class="paramtype">const glm::vec3 &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_animator_8cpp_source.html#l00012">12</a> pliku <a class="el" href="_animator_8cpp_source.html">Animator.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8c3e4df96e4c3664df28ea72aa7c227b" name="a8c3e4df96e4c3664df28ea72aa7c227b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c3e4df96e4c3664df28ea72aa7c227b">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::PieceAnimator::update </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dt</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_animator_8cpp_source.html#l00028">28</a> pliku <a class="el" href="_animator_8cpp_source.html">Animator.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="_animator_8h_source.html">Animator.h</a></li>
+<li><a class="el" href="_animator_8cpp_source.html">Animator.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacechess3d.html">chess3d</a></li><li class="navelem"><a href="classchess3d_1_1_piece_animator.html">PieceAnimator</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

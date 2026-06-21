@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Chess3D: Chess3D</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Chess3D
+   </div>
+   <div id="projectbrief">Projekt grafiki komputerowej - wizualizacja partii szachowej 3D.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Chess3D </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
+<p>Trójwymiarowy odtwarzacz partii szachowej (PGN viewer) napisany w C++17 / OpenGL 3.3. Projekt edukacyjny - grafika komputerowa.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+Budowanie (Visual Studio 2022/2026)</h1>
+<ol type="1">
+<li>Otwórz plik <span class="tt">Chess3D.sln</span> w Visual Studio.</li>
+<li>Wybierz konfigurację <span class="tt">Release | x64</span> (lub <span class="tt">Debug | x64</span>).</li>
+<li><span class="tt">Build → Build Solution</span> (Ctrl+Shift+B).</li>
+<li>Uruchom <span class="tt">Chess3D.exe</span> z katalogu głównego projektu (lub przez <span class="tt">Debug → Start Without Debugging</span>).</li>
+</ol>
+<p><b>Wszystkie biblioteki są dołączone w osobnych folderach projektu (<span class="tt">glew/</span>, <span class="tt">glfw/</span>, <span class="tt">glm/</span>, <span class="tt">assimp/</span>, <span class="tt">imgui/</span>, <span class="tt">stb/</span>) - nie jest wymagane pobieranie żadnych zewnętrznych zależności.</b></p>
+<p>Biblioteki dołączone:</p><ul>
+<li><b>GLFW 3.3.9</b> - obsługa okna i wejścia</li>
+<li><b>GLEW 2.2.0</b> - loader rozszerzeń OpenGL</li>
+<li><b>GLM 1.0.1</b> - matematyka wektorowa/macierzowa</li>
+<li><b>Assimp 5.4.2</b> - wczytywanie modeli 3D</li>
+<li><b>ImGui 1.91.0</b> - interfejs użytkownika</li>
+<li><b>stb_image</b> - wczytywanie tekstur</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Sterowanie</h1>
+<ul>
+<li><b>WASD</b> - ruch kamery</li>
+<li><b>Q/E</b> - w dół / w górę</li>
+<li><b>Prawym przyciskiem myszy + ruch</b> - obrót kamery (mouse-look)</li>
+<li><b>Kółko myszy</b> - zoom</li>
+<li><b>Spacja</b> - play/pause partii</li>
+<li><b>Strzałka w prawo</b> - następny ruch</li>
+<li><b>Strzałka w lewo</b> - poprzedni ruch</li>
+<li><b>R</b> - reset partii do pozycji początkowej</li>
+</ul>
+<p>Panel ImGui pozwala wczytać dowolny plik PGN i sterować tempem odtwarzania.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+Struktura katalogów</h1>
+<div class="fragment"><div class="line">Chess3D/</div>
+<div class="line">├── Chess3D.sln           # rozwiązanie Visual Studio</div>
+<div class="line">├── Chess3D.vcxproj       # plik projektu</div>
+<div class="line">├── *.cpp / *.h           # pliki źródłowe i nagłówkowe projektu</div>
+<div class="line">├── Doxyfile              # konfiguracja Doxygen</div>
+<div class="line">├── shaders/              # GLSL (vertex + fragment)</div>
+<div class="line">├── resources/</div>
+<div class="line">│   ├── models/           # modele figur (.obj / .fbx)</div>
+<div class="line">│   └── pgn/              # przykładowe partie PGN</div>
+<div class="line">├── glfw/</div>
+<div class="line">├── glew/</div>
+<div class="line">├── glm/</div>
+<div class="line">├── stb/</div>
+<div class="line">├── imgui/</div>
+<div class="line">└── assimp/</div>
+</div><!-- fragment --><p>Silnik szuka modeli figur w trzech krokach (każdy następny stosowany tylko gdy poprzedni nie wystarczy):</p>
+<ol type="1">
+<li><b>Pliki per-figura</b> w <span class="tt">resources/models/pawn.{obj,fbx,gltf,glb,dae,ply,blend}</span> (i analogicznie <span class="tt">knight</span>, <span class="tt">bishop</span>, <span class="tt">rook</span>, <span class="tt">queen</span>, <span class="tt">king</span>).</li>
+<li><b>Plik zbiorczy z nazwanymi obiektami</b> (np. OBJ z <span class="tt">o pawn</span> / <span class="tt">o knight</span> ..., albo FBX z nazwanymi nodami) - znaleziony w <span class="tt">resources/</span> lub <span class="tt">resources/models/</span>. Renderer wyciąga każdą figurę po nazwie węzła.</li>
+<li><b>Plik zbiorczy bez nazw</b> (jeden duży mesh łączący wszystkie figury) - silnik dzieli go na spójne komponenty (union-find po indeksach trójkątów), sortuje rosnąco po wysokości i przypisuje w kolejności <span class="tt">pawn → rook → knight → bishop → queen → king</span>. </li>
+</ol>
+</div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
+</div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Chess3D: Dokumentacja klasy chess3d::Texture</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Chess3D
+   </div>
+   <div id="projectbrief">Projekt grafiki komputerowej - wizualizacja partii szachowej 3D.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classchess3d_1_1_texture.html','','classchess3d_1_1_texture-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy chess3d::Texture</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Reprezentuje teksturę OpenGL wczytaną z pliku lub wygenerowaną proceduralnie.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_texture_8h_source.html">Texture.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a0cd69afc9dc78d831c4810057916e40c" id="r_a0cd69afc9dc78d831c4810057916e40c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0cd69afc9dc78d831c4810057916e40c">Texture</a> ()=default</td></tr>
+<tr class="memitem:aa22f16592bb8755e7d3dc7f745510746" id="r_aa22f16592bb8755e7d3dc7f745510746"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa22f16592bb8755e7d3dc7f745510746">~Texture</a> ()</td></tr>
+<tr class="memitem:a64d995260ebcc3863af4ebaf74af2ba3" id="r_a64d995260ebcc3863af4ebaf74af2ba3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a64d995260ebcc3863af4ebaf74af2ba3">Texture</a> (const Texture &amp;)=delete</td></tr>
+<tr class="memitem:a61aa6dc5b64c0a0d09dac5cc208de322" id="r_a61aa6dc5b64c0a0d09dac5cc208de322"><td class="memItemLeft"><a class="el" href="#a0cd69afc9dc78d831c4810057916e40c">Texture</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a61aa6dc5b64c0a0d09dac5cc208de322">operator=</a> (const <a class="el" href="#a0cd69afc9dc78d831c4810057916e40c">Texture</a> &amp;)=delete</td></tr>
+<tr class="memitem:a1e33135fdb22d229c34e23fb1c65b26c" id="r_a1e33135fdb22d229c34e23fb1c65b26c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1e33135fdb22d229c34e23fb1c65b26c">Texture</a> (Texture &amp;&amp;other) noexcept</td></tr>
+<tr class="memitem:a60fc4e2f9c02eedf9b9e5f4258ba7100" id="r_a60fc4e2f9c02eedf9b9e5f4258ba7100"><td class="memItemLeft"><a class="el" href="#a0cd69afc9dc78d831c4810057916e40c">Texture</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a60fc4e2f9c02eedf9b9e5f4258ba7100">operator=</a> (<a class="el" href="#a0cd69afc9dc78d831c4810057916e40c">Texture</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memitem:a0b28823e34e1979e6821b4ad123ac0b4" id="r_a0b28823e34e1979e6821b4ad123ac0b4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a0b28823e34e1979e6821b4ad123ac0b4">loadFromFile</a> (const std::string &amp;path, bool srgb=true, bool generateMips=true)</td></tr>
+<tr class="memitem:a336962e5082e6b8c74608aff798534fc" id="r_a336962e5082e6b8c74608aff798534fc"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a336962e5082e6b8c74608aff798534fc">createProceduralWood</a> (int size, bool lightWood)</td></tr>
+<tr class="memitem:a3023a28f13d6978b48f14c0cf759cae1" id="r_a3023a28f13d6978b48f14c0cf759cae1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a3023a28f13d6978b48f14c0cf759cae1">createProceduralMarble</a> (int size, bool whiteMarble)</td></tr>
+<tr class="memitem:a7b1c83f8e81381f8988f8878b5912f57" id="r_a7b1c83f8e81381f8988f8878b5912f57"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7b1c83f8e81381f8988f8878b5912f57">bind</a> (GLuint unit=0) const</td></tr>
+<tr class="memitem:a9217696b368ee831ac9bfc846190e75e" id="r_a9217696b368ee831ac9bfc846190e75e"><td class="memItemLeft">GLuint&#160;</td><td class="memItemRight"><a class="el" href="#a9217696b368ee831ac9bfc846190e75e">id</a> () const</td></tr>
+<tr class="memitem:a332b718c964c5d32be8613f06a83887c" id="r_a332b718c964c5d32be8613f06a83887c"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a332b718c964c5d32be8613f06a83887c">width</a> () const</td></tr>
+<tr class="memitem:a369889f7922053daecd1b298c9202ee1" id="r_a369889f7922053daecd1b298c9202ee1"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a369889f7922053daecd1b298c9202ee1">height</a> () const</td></tr>
+<tr class="memitem:a6481c65f2f2f8f99af359c5efebf6d2a" id="r_a6481c65f2f2f8f99af359c5efebf6d2a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6481c65f2f2f8f99af359c5efebf6d2a">valid</a> () const</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Reprezentuje teksturę OpenGL wczytaną z pliku lub wygenerowaną proceduralnie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_texture_8h_source.html#l00015">15</a> pliku <a class="el" href="_texture_8h_source.html">Texture.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a0cd69afc9dc78d831c4810057916e40c" name="a0cd69afc9dc78d831c4810057916e40c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cd69afc9dc78d831c4810057916e40c">&#9670;&#160;</a></span>Texture() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">chess3d::Texture::Texture </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa22f16592bb8755e7d3dc7f745510746" name="aa22f16592bb8755e7d3dc7f745510746"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa22f16592bb8755e7d3dc7f745510746">&#9670;&#160;</a></span>~Texture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">chess3d::Texture::~Texture </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_texture_8cpp_source.html#l00029">29</a> pliku <a class="el" href="_texture_8cpp_source.html">Texture.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a64d995260ebcc3863af4ebaf74af2ba3" name="a64d995260ebcc3863af4ebaf74af2ba3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64d995260ebcc3863af4ebaf74af2ba3">&#9670;&#160;</a></span>Texture() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">chess3d::Texture::Texture </td>
+          <td>(</td>
+          <td class="paramtype">const Texture &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1e33135fdb22d229c34e23fb1c65b26c" name="a1e33135fdb22d229c34e23fb1c65b26c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e33135fdb22d229c34e23fb1c65b26c">&#9670;&#160;</a></span>Texture() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">chess3d::Texture::Texture </td>
+          <td>(</td>
+          <td class="paramtype">Texture &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_texture_8cpp_source.html#l00036">36</a> pliku <a class="el" href="_texture_8cpp_source.html">Texture.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a7b1c83f8e81381f8988f8878b5912f57" name="a7b1c83f8e81381f8988f8878b5912f57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b1c83f8e81381f8988f8878b5912f57">&#9670;&#160;</a></span>bind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chess3d::Texture::bind </td>
+          <td>(</td>
+          <td class="paramtype">GLuint</td>          <td class="paramname"><span class="paramname"><em>unit</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_texture_8cpp_source.html#l00212">212</a> pliku <a class="el" href="_texture_8cpp_source.html">Texture.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3023a28f13d6978b48f14c0cf759cae1" name="a3023a28f13d6978b48f14c0cf759cae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3023a28f13d6978b48f14c0cf759cae1">&#9670;&#160;</a></span>createProceduralMarble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chess3d::Texture::createProceduralMarble </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>whiteMarble</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_texture_8cpp_source.html#l00175">175</a> pliku <a class="el" href="_texture_8cpp_source.html">Texture.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a336962e5082e6b8c74608aff798534fc" name="a336962e5082e6b8c74608aff798534fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a336962e5082e6b8c74608aff798534fc">&#9670;&#160;</a></span>createProceduralWood()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chess3d::Texture::createProceduralWood </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>lightWood</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_texture_8cpp_source.html#l00135">135</a> pliku <a class="el" href="_texture_8cpp_source.html">Texture.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a369889f7922053daecd1b298c9202ee1" name="a369889f7922053daecd1b298c9202ee1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a369889f7922053daecd1b298c9202ee1">&#9670;&#160;</a></span>height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int chess3d::Texture::height </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_texture_8h_source.html#l00038">38</a> pliku <a class="el" href="_texture_8h_source.html">Texture.h</a>.</p>
+
+</div>
+</div>
+<a id="a9217696b368ee831ac9bfc846190e75e" name="a9217696b368ee831ac9bfc846190e75e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9217696b368ee831ac9bfc846190e75e">&#9670;&#160;</a></span>id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint chess3d::Texture::id </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_texture_8h_source.html#l00036">36</a> pliku <a class="el" href="_texture_8h_source.html">Texture.h</a>.</p>
+
+</div>
+</div>
+<a id="a0b28823e34e1979e6821b4ad123ac0b4" name="a0b28823e34e1979e6821b4ad123ac0b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b28823e34e1979e6821b4ad123ac0b4">&#9670;&#160;</a></span>loadFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chess3d::Texture::loadFromFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>srgb</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>generateMips</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_texture_8cpp_source.html#l00081">81</a> pliku <a class="el" href="_texture_8cpp_source.html">Texture.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a61aa6dc5b64c0a0d09dac5cc208de322" name="a61aa6dc5b64c0a0d09dac5cc208de322"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61aa6dc5b64c0a0d09dac5cc208de322">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a0cd69afc9dc78d831c4810057916e40c">Texture</a> &amp; chess3d::Texture::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a0cd69afc9dc78d831c4810057916e40c">Texture</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60fc4e2f9c02eedf9b9e5f4258ba7100" name="a60fc4e2f9c02eedf9b9e5f4258ba7100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60fc4e2f9c02eedf9b9e5f4258ba7100">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a0cd69afc9dc78d831c4810057916e40c">Texture</a> &amp; chess3d::Texture::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a0cd69afc9dc78d831c4810057916e40c">Texture</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_texture_8cpp_source.html#l00041">41</a> pliku <a class="el" href="_texture_8cpp_source.html">Texture.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6481c65f2f2f8f99af359c5efebf6d2a" name="a6481c65f2f2f8f99af359c5efebf6d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6481c65f2f2f8f99af359c5efebf6d2a">&#9670;&#160;</a></span>valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chess3d::Texture::valid </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_texture_8h_source.html#l00039">39</a> pliku <a class="el" href="_texture_8h_source.html">Texture.h</a>.</p>
+
+</div>
+</div>
+<a id="a332b718c964c5d32be8613f06a83887c" name="a332b718c964c5d32be8613f06a83887c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a332b718c964c5d32be8613f06a83887c">&#9670;&#160;</a></span>width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int chess3d::Texture::width </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_texture_8h_source.html#l00037">37</a> pliku <a class="el" href="_texture_8h_source.html">Texture.h</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="_texture_8h_source.html">Texture.h</a></li>
+<li><a class="el" href="_texture_8cpp_source.html">Texture.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacechess3d.html">chess3d</a></li><li class="navelem"><a href="classchess3d_1_1_texture.html">Texture</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>
