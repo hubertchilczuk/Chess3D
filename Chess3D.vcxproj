@@ -79,7 +79,7 @@
       <PreprocessorDefinitions>WIN32;_WINDOWS;GLEW_STATIC;GLFW_INCLUDE_NONE;_ITERATOR_DEBUG_LEVEL=0;CHESS3D_RESOURCES_DIR=&quot;$(Chess3DProjFwd)resources&quot;;CHESS3D_SHADERS_DIR=&quot;$(Chess3DProjFwd)shaders&quot;;_CRT_SECURE_NO_WARNINGS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)third_party\glfw\include;$(ProjectDir)third_party\glew\include;$(ProjectDir)third_party\glm;$(ProjectDir)third_party\stb;$(ProjectDir)third_party\imgui;$(ProjectDir)third_party\imgui\backends;$(ProjectDir)third_party\assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)glfw\include;$(ProjectDir)glew\include;$(ProjectDir)glm;$(ProjectDir)stb;$(ProjectDir)imgui;$(ProjectDir)imgui\backends;$(ProjectDir)assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -88,9 +88,9 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)third_party\glfw\lib-vc2022;$(ProjectDir)third_party\glew\lib\Release\x64;$(ProjectDir)third_party\assimp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)glfw\lib-vc2022;$(ProjectDir)glew\lib\Release\x64;$(ProjectDir)assimp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glfw3.lib;glew32s.lib;assimp-vc145-mt.lib;zlibstatic.lib;msvcprt.lib;opengl32.lib;gdi32.lib;user32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <IgnoreSpecificDefaultLibraries>msvcprtd.lib;libcpmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>msvcprtd.lib;libcpmtd.lib;LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
 
@@ -102,7 +102,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;GLEW_STATIC;GLFW_INCLUDE_NONE;CHESS3D_RESOURCES_DIR=&quot;$(Chess3DProjFwd)resources&quot;;CHESS3D_SHADERS_DIR=&quot;$(Chess3DProjFwd)shaders&quot;;_CRT_SECURE_NO_WARNINGS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)third_party\glfw\include;$(ProjectDir)third_party\glew\include;$(ProjectDir)third_party\glm;$(ProjectDir)third_party\stb;$(ProjectDir)third_party\imgui;$(ProjectDir)third_party\imgui\backends;$(ProjectDir)third_party\assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)glfw\include;$(ProjectDir)glew\include;$(ProjectDir)glm;$(ProjectDir)stb;$(ProjectDir)imgui;$(ProjectDir)imgui\backends;$(ProjectDir)assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -113,59 +113,59 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)third_party\glfw\lib-vc2022;$(ProjectDir)third_party\glew\lib\Release\x64;$(ProjectDir)third_party\assimp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)glfw\lib-vc2022;$(ProjectDir)glew\lib\Release\x64;$(ProjectDir)assimp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glfw3.lib;glew32s.lib;assimp-vc145-mt.lib;zlibstatic.lib;opengl32.lib;gdi32.lib;user32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
 
   <!-- Project source files -->
   <ItemGroup>
-    <ClCompile Include="src\Animator.cpp" />
-    <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\Camera.cpp" />
-    <ClCompile Include="src\ChessBoard.cpp" />
-    <ClCompile Include="src\ChessGame.cpp" />
-    <ClCompile Include="src\ChessPiece.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Mesh.cpp" />
-    <ClCompile Include="src\Model.cpp" />
-    <ClCompile Include="src\PGNParser.cpp" />
-    <ClCompile Include="src\PrimitiveBuilder.cpp" />
-    <ClCompile Include="src\Renderer.cpp" />
-    <ClCompile Include="src\Shader.cpp" />
-    <ClCompile Include="src\Texture.cpp" />
-    <ClCompile Include="src\UIManager.cpp" />
+    <ClCompile Include="Animator.cpp" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="ChessBoard.cpp" />
+    <ClCompile Include="ChessGame.cpp" />
+    <ClCompile Include="ChessPiece.cpp" />
+    <ClCompile Include="main_file.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="PGNParser.cpp" />
+    <ClCompile Include="PrimitiveBuilder.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="UIManager.cpp" />
   </ItemGroup>
 
   <!-- ImGui source files compiled directly -->
   <ItemGroup>
-    <ClCompile Include="third_party\imgui\imgui.cpp" />
-    <ClCompile Include="third_party\imgui\imgui_draw.cpp" />
-    <ClCompile Include="third_party\imgui\imgui_tables.cpp" />
-    <ClCompile Include="third_party\imgui\imgui_widgets.cpp" />
-    <ClCompile Include="third_party\imgui\imgui_demo.cpp" />
-    <ClCompile Include="third_party\imgui\backends\imgui_impl_glfw.cpp" />
-    <ClCompile Include="third_party\imgui\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imgui_draw.cpp" />
+    <ClCompile Include="imgui\imgui_tables.cpp" />
+    <ClCompile Include="imgui\imgui_widgets.cpp" />
+    <ClCompile Include="imgui\imgui_demo.cpp" />
+    <ClCompile Include="imgui\backends\imgui_impl_glfw.cpp" />
+    <ClCompile Include="imgui\backends\imgui_impl_opengl3.cpp" />
   </ItemGroup>
 
   <!-- Header files -->
   <ItemGroup>
-    <ClInclude Include="include\Animator.h" />
-    <ClInclude Include="include\Application.h" />
-    <ClInclude Include="include\Camera.h" />
-    <ClInclude Include="include\ChessBoard.h" />
-    <ClInclude Include="include\ChessGame.h" />
-    <ClInclude Include="include\ChessPiece.h" />
-    <ClInclude Include="include\Common.h" />
-    <ClInclude Include="include\Light.h" />
-    <ClInclude Include="include\Mesh.h" />
-    <ClInclude Include="include\Model.h" />
-    <ClInclude Include="include\PGNParser.h" />
-    <ClInclude Include="include\PrimitiveBuilder.h" />
-    <ClInclude Include="include\Renderer.h" />
-    <ClInclude Include="include\Shader.h" />
-    <ClInclude Include="include\Texture.h" />
-    <ClInclude Include="include\UIManager.h" />
+    <ClInclude Include="Animator.h" />
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="ChessBoard.h" />
+    <ClInclude Include="ChessGame.h" />
+    <ClInclude Include="ChessPiece.h" />
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="PGNParser.h" />
+    <ClInclude Include="PrimitiveBuilder.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="UIManager.h" />
   </ItemGroup>
 
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

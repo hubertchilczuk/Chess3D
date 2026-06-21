@@ -1,0 +1,29 @@
+PROJECT_NAME           = "Chess3D"
+PROJECT_BRIEF          = "Projekt grafiki komputerowej - wizualizacja partii szachowej 3D."
+OUTPUT_DIRECTORY       = docs
+CREATE_SUBDIRS         = NO
+OUTPUT_LANGUAGE        = Polish
+USE_MDFILE_AS_MAINPAGE = README.md
+
+INPUT                  = .
+FILE_PATTERNS          = *.h *.cpp *.md
+RECURSIVE              = YES
+EXCLUDE                = assimp glew glfw glm imgui stb .vs bin obj
+EXCLUDE_PATTERNS       = */lib/* */include/GL/* */include/GLFW/* */glm/* */imgui/backends/*
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+HIDE_UNDOC_MEMBERS     = NO
+HIDE_UNDOC_CLASSES     = NO
+
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+GENERATE_TREEVIEW      = YES
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+FULL_PATH_NAMES        = NO
+STRIP_FROM_PATH        = .
+QUIET                  = YES
+WARN_IF_UNDOCUMENTED   = NO

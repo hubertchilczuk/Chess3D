@@ -10,7 +10,7 @@ Projekt edukacyjny - grafika komputerowa.
 3. `Build → Build Solution` (Ctrl+Shift+B).
 4. Uruchom `Chess3D.exe` z katalogu głównego projektu (lub przez `Debug → Start Without Debugging`).
 
-**Wszystkie biblioteki są dołączone w folderze `third_party/` - nie jest wymagane pobieranie żadnych zewnętrznych zależności.**
+**Wszystkie biblioteki są dołączone w osobnych folderach projektu (`glew/`, `glfw/`, `glm/`, `assimp/`, `imgui/`, `stb/`) - nie jest wymagane pobieranie żadnych zewnętrznych zależności.**
 
 Biblioteki dołączone:
 - **GLFW 3.3.9** - obsługa okna i wejścia
@@ -39,19 +39,18 @@ Panel ImGui pozwala wczytać dowolny plik PGN i sterować tempem odtwarzania.
 Chess3D/
 ├── Chess3D.sln           # rozwiązanie Visual Studio
 ├── Chess3D.vcxproj       # plik projektu
-├── src/                  # implementacje
-├── include/              # nagłówki
+├── *.cpp / *.h           # pliki źródłowe i nagłówkowe projektu
+├── Doxyfile              # konfiguracja Doxygen
 ├── shaders/              # GLSL (vertex + fragment)
 ├── resources/
 │   ├── models/           # modele figur (.obj / .fbx)
 │   └── pgn/              # przykładowe partie PGN
-└── third_party/          # biblioteki (dołączone, nie wymagają pobierania)
-    ├── glfw/
-    ├── glew/
-    ├── glm/
-    ├── stb/
-    ├── imgui/
-    └── assimp/
+├── glfw/
+├── glew/
+├── glm/
+├── stb/
+├── imgui/
+└── assimp/
 ```
 
 Silnik szuka modeli figur w trzech krokach (każdy następny stosowany tylko gdy poprzedni nie wystarczy):
